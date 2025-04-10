@@ -5,7 +5,7 @@ ESTADO = 0
 --local love = require("love") necessito amor para programar
 local telaMenu = require("telaMenu")
 local telaJogo  = require("telaJogo")
-local TelaTutorial = require("telaTutorial")
+local telaTutorial = require("telaTutorial")
 
 function love.load()
     --CONSTANTES PARA O OBJETO JANELA
@@ -24,6 +24,7 @@ function love.load()
    aumentar_angulo = true
 
    telaMenu.carregarTela()
+   telaTutorial.carregar_Tutorial()
 end
 
 function love.update(dt)
@@ -50,7 +51,7 @@ function love.draw()
    elseif ESTADO==2 then
       telaMenu.desenharFundo({0.2, 0.15, 0.5, 1}, {0.3, 0.2, 0.6, 1}, angulo_GradientMenu)
       love.graphics.setColor(1,1,1,1)
-
+      telaTutorial.desenhar()
       --love.graphics.print("tela de tutorial")
    elseif  ESTADO==3 then
       print("saiu do jogo")
@@ -62,10 +63,22 @@ end
 function love.mousepressed(x, y, button)
    if ESTADO == 0 then
       print("mouse clicou na tela de menu")
-      telaMenu.mouseClicado(x,y,button)
+      telaMenu.mouseClicado(x, y, button)
    elseif ESTADO==1 then
       print("mouse clicou na tela de jogo")
    elseif ESTADO==2 then
      print("mouse clicado na tela de tutorial")
+     telaTutorial.clickBtn(x, y, button)
+   end
+end
+
+--funçao para uma responsividade magica com callbacks
+function love.resize(w, h)
+   if ESTADO == 0 then
+      telaMenu.ajustarElementos()
+   elseif ESTADO==1 then
+     
+   elseif ESTADO==2 then
+      telaTutorial.ajustarElementos()
    end
 end

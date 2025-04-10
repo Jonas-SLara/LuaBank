@@ -26,15 +26,21 @@ function Tela_menu.carregarTela()
         w, h, 0, 0, {0.8, 0.2, 0.4}, "SAIR", 20
     ))
 
-    for i, botao in ipairs(Tela_menu.btns) do
-        local x,y = love.window.getMode()
-        x = (x - botao.w)/2
-        y = (y - botao.h)/2 + botao.h*(i-1) + (i-1)*10
-        botao.x = x
-        botao.y = y
-    end
+    
 
     table.insert(Tela_menu.imgs, estruturas.criarSprite("img/porco.jpg"))
+
+    --inicicializando as coordenadas  dos elementos na tela
+    for i, botao in ipairs(Tela_menu.btns) do
+        local x,y = love.graphics.getDimensions()
+        x = (x - botao.w)/2
+        y = (y - botao.h)/2 + botao.h*(i-1) + (i-1)*10
+        estruturas.botaoSetCoord(botao, x, y)
+    end
+
+    local x, y = love.graphics.getDimensions()
+    local porco = Tela_menu.imgs[1]
+    estruturas.spritesSetCoord(porco, (x-porco.imagem:getWidth())/2, (y-porco.imagem:getHeight())/2)
 end
 
 
@@ -80,16 +86,13 @@ end
 
 function Tela_menu.desenharPorco()
     local ref_imagem = Tela_menu.imgs[1]
-    local ix, iy= love.window.getMode()
-    --alinhando imagem no centro da tela usando as coordenadas da tela
-    local x = (ix - ref_imagem.imagem:getWidth())/2
-    local y = (iy - ref_imagem.imagem:getHeight())/2
+
  
     if ref_imagem then
         shaders.colorKeyShader:send("keycolor", {1.0, 1.0, 1.0})
         shaders.colorKeyShader:send("tolerancia", 0.2)
         love.graphics.setShader(colorKeyShader)
-        estruturas.desenharSpriteTela(ref_imagem, 1, x, y)
+        estruturas.desenharSpriteTela(ref_imagem, 1)
         love.graphics.setShader()
     else
         print("Erro: imagem não carregada corretamente!")
@@ -116,6 +119,21 @@ function Tela_menu.mouseClicado(x, y, button)
             end
         end
     end
+end
+
+function Tela_menu.ajustarElementos()
+    --ajusta imagem no centro
+    local x, y = love.graphics.getDimensions()
+    local porco = Tela_menu.imgs[1]
+    estruturas.spritesSetCoord(porco, (x-porco.imagem:getWidth())/2, (y-porco.imagem:getHeight())/2)
+    --ajusta botoes no centro
+    for i, botao in ipairs(Tela_menu.btns) do
+        local x,y = love.graphics.getDimensions()
+        x = (x - botao.w)/2
+        y = (y - botao.h)/2 + botao.h*(i-1) + (i-1)*10
+        estruturas.botaoSetCoord(botao, x, y)
+    end
+    print("elemento da tela de menu foram ajustados")
 end
 
 return Tela_menu --retorna o modulo com todas as suas funções e variaveis para o programa que chamou

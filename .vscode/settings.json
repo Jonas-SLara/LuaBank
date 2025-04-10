@@ -1,0 +1,15 @@
+{
+    "Lua.diagnostics.globals": [
+        "love",
+        "objeto1",
+        "mover",
+        "velocidade",
+        "objeto2",
+        "shader_inverterCores",
+        "porcoJPG",
+        "angulo_GradientMenu",
+        "aumentar",
+        "aumentar_angulo",
+        "love_ScreenSize"
+    ]
+}
