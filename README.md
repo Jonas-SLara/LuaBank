@@ -7,7 +7,13 @@ APRESENTAÇÃO DO PROJETO:
         como exemplo o jogo do banco imobilário usando LUA e love2D
     -O que será avaliado na aprendizagem do software: Ativos e passivos, juros simples e compostos
         Reserva de emergência, porcentagem, emprestimo
-
+        
+sequenceDiagram
+        actor Alice
+        actor Bob
+        Alice->>Bob: Hi Bob
+        Bob->>Alice: Hi Alice
+        
 ----------------------------
 DESENVOLVIMENTO DO PROJETO
 ----------------------------
