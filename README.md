@@ -1,44 +1,27 @@
-# LuaBank
-@JONAS_SL
-------------------------
-APRESENTAÇÃO DO PROJETO:
-------------------------
-    -Criação de um software educacional voltado para a área de educação financeira usando
-        como exemplo o jogo do banco imobilário usando LUA e love2D
-    -O que será avaliado na aprendizagem do software: Ativos e passivos, juros simples e compostos
-        Reserva de emergência, porcentagem, emprestimo
-        
-sequenceDiagram
-        actor Alice
-        actor Bob
-        Alice->>Bob: Hi Bob
-        Bob->>Alice: Hi Alice
-        
-----------------------------
-DESENVOLVIMENTO DO PROJETO
-----------------------------
-    -Um tabuleiro com pelo menos 60 casas representada por uma estrutura de dados com 2 jogadores
-        sendo um dos jogadores um boot (jogado pela máquina) e um sendo o usuário.
+# Jogo de Educação Financeira Banco Imobiliario
+* author: @JONAS_SL
+_______________________________________________
 
-    -Hávera um dado com casas de 1 a 6, a cada fim de partida e inicio de uma, na vez do jogador,ele precisa
-    ser girado para obter o numero da casa e iniciar a jogada.
+## Resumo
+        O jogo banco imobiliário se resume a uma dinâmica em um tabuleiro
+    com dados e cartas para comprar imóveis e propriedades com dinheiro
+    ganho dentro do jogo, os elementos desta dinâmica foram usados para gamificar
+    uma maneira de se ensinar enducação financeira para adolescentes cursando
+    o 8º e 9º ano do ensino fundamental II (público alvo) de maneira lúdica
+    equilibrando diversão com responsabilidades financeiras e conhecimento
+        Os principais Conteudos Abordados Serão a respeitos de matemática 
+    financeira Da BNCC nestas séries dos anos finais as quais são: juros compostos,
+    montante, taxa de juros.
+        Outros conteúdos relacionados ao mesmo escopo de educação financeira serão
+    abordados, estes conteúdos são: Reserva de emergencia, Ativos e Passivos, Fundos
+    imobiliários, Inflação e Controle de Dívidas
 
-    -O jogador se move ao longo das casas e quando para em uma é analisado a casa que o jogador.
+_______________________________________________
 
-    -Cada casa pode possuir uma carta que é solta na tela exibindo informações do ativo ou passivo junto com
-        uma informação bônus para agregar no conhecimento.
+## Diagrama de Casos de Uso
+![Diagrama casos uso](./casos_de_uso.png)
 
-    -Nesta carta há opção de comprar ou não o ativo ou o passivo se depender da carta.
+## Diagrama de Sequencia
+![Diagrama de sequencia](./sequencia.png)
 
-    -Deve haver um Banco onde é guardado o dinheiro de cada jogador em sua conta, o jogador pode pedir ate 2 empréstimos para o banco.
-
-    -Existe um sistema de Cobrança para caso um jogador caia na casa que tem uma propiedade que um outro jogador Comprou e também para compra de ativos e passivos ou para pagamento de emprestimos.
-
-    -Cada jogador tem uma lista de passivos e uma lista de ativos que comprou 
-
-    -Deve ter um sistema para terminar o jogo
-
------------------------------
-REGRAS DO JOGO
------------------------------
-    - 
+    
