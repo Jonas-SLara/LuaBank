@@ -24,4 +24,12 @@ _______________________________________________
 ## Diagrama de Sequencia
 ![Diagrama de sequencia](./sequencia.png)
 
-    
+## Diagrama de Atividades, escopo geral
+![Diagrama de atividades 1](./atividades1.drawio.png)
+
+## Diagrama de Atividades, escopo das cartas
+![Diagrama de atividades 2](./atividades2.png)
+
+[Link pro protótipo no figma](https://www.figma.com/design/1ZqToWNni79YQuaJudrlLu/Jogo-do-banco-Imobilario?node-id=0-1&t=A38d9BysGKyVixUv-1)
+
+[Link pro template no Engaged](https://docs.google.com/document/d/1PoYMowO57KqJXd2PIGKLjQapXWg-2SflWNqnVqUFat4/edit?usp=sharing)
