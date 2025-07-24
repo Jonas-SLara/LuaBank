@@ -1,5 +1,5 @@
 # Jogo de Educação Financeira Banco Imobiliario
-* author: @JONAS_SL
+**author: @JONAS_SL**
 _______________________________________________
 
 ## Resumo
@@ -19,16 +19,16 @@ _______________________________________________
 _______________________________________________
 
 ## Diagrama de Casos de Uso
-![Diagrama casos uso](./casos_de_uso.png)
+![Diagrama casos uso](./documentation/casos_de_uso.png)
 
 ## Diagrama de Sequencia
-![Diagrama de sequencia](./sequencia.png)
+![Diagrama de sequencia](./documentation/sequencia.png)
 
 ## Diagrama de Atividades, escopo geral
-![Diagrama de atividades 1](./atividades1.drawio.png)
+![Diagrama de atividades 1](./documentation/atividades1.drawio.png)
 
 ## Diagrama de Atividades, escopo das cartas
-![Diagrama de atividades 2](./atividades2.png)
+![Diagrama de atividades 2](./documentation/atividades2.png)
 
 [Link pro protótipo no figma](https://www.figma.com/design/1ZqToWNni79YQuaJudrlLu/Jogo-do-banco-Imobilario?node-id=0-1&t=A38d9BysGKyVixUv-1)
 
