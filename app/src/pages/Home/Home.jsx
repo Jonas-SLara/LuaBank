@@ -1,10 +1,13 @@
-import Main from "../../Components/Main";
+import Main from "../../Components/Main/Main";
+import Menu from "../../Components/Menu/Menu";
+import logo from "../../../public/dices2.png";
 
 function Home(){
+  const b1 = "../../../public/city.png";
   return(
     <>
-      <Main>
-        <h2>Menu</h2>
+      <Main bannerURL={b1}>
+        <Menu></Menu>
       </Main>          
     </>
   );

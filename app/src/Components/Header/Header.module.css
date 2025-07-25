@@ -1,0 +1,17 @@
+.nav{
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  top:0;
+  min-height: 6vh;
+  background-color: #0000000F;
+  padding: 8px;
+}
+
+.link{
+  color: white;
+  text-decoration: none;
+}
+
+
+

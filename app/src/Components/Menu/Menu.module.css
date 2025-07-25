@@ -1,0 +1,47 @@
+.menu{
+  width: 300px;
+  width: 100%;
+  min-height: 50vh;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.link{
+  width: 80%;
+}
+
+.link button{
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  width: 100%;
+  color: #FFFFFF;
+  box-shadow: #000000AA 0 0 5px;
+}
+
+.link button:hover{
+  border: solid 2px #FFFFFF;
+}
+
+.link button img{
+  float: right;
+}
+.link button span{
+  text-align: center;
+}
+
+.info{
+  background-color: #00F000;
+}
+
+.play{
+  background-color: #F57004;
+}

@@ -1,4 +1,4 @@
-import Main from "../../Components/Main"
+import Main from "../../Components/Main/Main"
 
 function GameView(){
     return(
