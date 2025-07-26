@@ -1,0 +1,46 @@
+/* ESTILOS GLOBAIS DE CSS*/
+
+/*ESTILOS GLOBAIS PARA DISPLAY FLEX*/
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.around{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/*ESTILOS GLOBAIS DE BOTÕES*/
+.button{
+  font-weight: 600;
+  border: solid 2px #FFFFFF;
+  padding: 8px;
+  border-radius: 0.5rem;
+  color: #FFFFFF;
+  box-shadow: #000000AA 0 0 5px;
+}
+
+.button img{
+  float: right;
+}
+
+.button span{
+  display: inline-block;
+  width: 60%;
+  text-align: center;
+}
+
+.info{
+  background-color: #00F000;
+}
+
+.play{
+  background-color: #F57004;
+}
+
+.close{
+  background-color: #F52020;
+}

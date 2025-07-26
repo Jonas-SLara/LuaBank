@@ -2,10 +2,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 body{
     background-color: #0d64dd;
-    color: #eee;
+    color: #FFFFFF;
     font-family: 'Courier New', Courier, monospace;
 }

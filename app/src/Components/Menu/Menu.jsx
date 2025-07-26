@@ -1,9 +1,12 @@
 import {Link} from 'react-router-dom';
 import styles from './Menu.module.css';
+import stylesG from '../../styles/common.module.css';
 import { motion } from 'framer-motion';
 
 import icon1 from '../../assets/iconIdea.png';
 import icon2 from '../../assets/iconDado.png';
+const LinkMotion = motion(Link);
+
 
 function Menu(){
   return(
@@ -24,21 +27,29 @@ function Menu(){
           }
         },
       }}
-      className={styles.menu}>
+      className={`${stylesG.center} ${styles.menu}`}>
       
-      <Link to="/tutorial" className={styles.link}>
-        <button id='btn1' className={styles.info}>
+      <LinkMotion 
+      to="/tutorial" 
+      className={`${stylesG.button} ${stylesG.info} ${styles.link}`}
+      whileHover={{ scale: 1.1, boxShadow: "0px 0px 20px #000000" }}
+      whileTap={{ scale: 0.95 }}
+      transition={{duration: 0.6}}
+      >
           <span>Tutorial</span>
           <img src={icon1} width={"32px"}></img>
-        </button>
-      </Link>
+      </LinkMotion>
 
-      <Link to="/jogo" className={styles.link}>
-        <button id='btn2' className={styles.play}>
+      <LinkMotion
+      to="/jogo" 
+      className={`${stylesG.button} ${stylesG.play} ${styles.link}`}
+      whileHover={{ scale: 1.1, boxShadow: "0px 0px 20px #000000" }}
+      whileTap={{ scale: 0.95 }}
+      transition={{duration: 0.6}}
+      >
           <span>Jogo</span>
           <img src={icon2} width={"32px"}></img>
-        </button>
-      </Link>
+      </LinkMotion>
 
     </motion.div>
   );

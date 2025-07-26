@@ -1,10 +1,12 @@
+import Header from "../../Components/Header/Header";
 import Main from "../../Components/Main/Main"
 
 function GameView(){
     return(
         <>
+            <Header page="jogo"/>
             <Main>
-                <h2>Jogo</h2>
+                
             </Main>
         </>
     );

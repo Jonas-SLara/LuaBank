@@ -1,9 +1,11 @@
 import styles from './Header.module.css';
-import { Link } from 'react-router-dom';
-import seta from '../../assets/icon-park-twotone_next.png';
+import stylesG from '../../styles/common.module.css';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
-function Header(){
+import seta from '../../assets/icon-park-twotone_next.png';
+
+function Header({page}){
   return(
     <motion.nav initial="hidden" animate="visible"
     variants={{
@@ -18,10 +20,34 @@ function Header(){
       },
     }}
     
-    className={styles.nav}>
-      <Link to={"/"} className={styles.link}>
-        <img src={seta} width={"32px"}/>
-      </Link>
+    className={`${styles.nav} ${stylesG.around}`}>
+      
+      {/*seta de navegação para voltar para a home quando a página não foro menu */}
+      <div>
+      { page !== "menu" &&
+          <Link to={"/"} className={styles.link}>
+                <img src={seta} width={"32px"}/>
+          </Link>
+      }
+      </div> 
+
+      {/* titulo do cabeçalho sempre padrão */}
+      <div className={styles.titulo}>
+       <span>Banco Imobiliario</span>       
+      </div>
+
+      {/*Botão de encerrar o jogo, vai aparecer somente quando tiver ná página do jogo */}
+      <div>
+      {
+        page === "jogo" &&
+          <Link 
+          to={"/"} 
+          className={`${stylesG.button} ${stylesG.close} ${stylesG.link}`}
+          >
+            Encerrar
+          </Link>
+      }
+      </div>
     </motion.nav>
   );
 }

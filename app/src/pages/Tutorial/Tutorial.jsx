@@ -1,12 +1,13 @@
 import Main from "../../Components/Main/Main";
 import Header from "../../Components/Header/Header";
+import { Link } from "react-router-dom";
 
 function Tutorial(){
     return(
         <>
-            <Header></Header>
+            <Header page="tutorial"/>
             <Main>
-                <h2>Tutorial</h2>
+                
             </Main>
         </>
     );

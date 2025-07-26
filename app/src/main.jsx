@@ -3,11 +3,17 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 
 import HomeRoutes from './Routes/routes';
+import ErrorBoundary from './Components/ErrorBoundary';
+import { PlayerContextProvider } from './context/playerContext';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <>
-      <HomeRoutes></HomeRoutes>
+      <ErrorBoundary>
+        <PlayerContextProvider>
+          <HomeRoutes></HomeRoutes>
+        </PlayerContextProvider>
+      </ErrorBoundary>
     </>
   </StrictMode>,
 )
