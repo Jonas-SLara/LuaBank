@@ -1,11 +1,9 @@
 import Main from "../../Components/Main/Main";
 import Menu from "../../Components/Menu/Menu";
 import Header from "../../Components/Header/Header";
-import { Link } from "react-router-dom";
 import InputEnter from "../../Components/Form/InputEnter";
-
 function Home(){
-  const b1 = "../../../public/city.png";
+  const b1 = "/city.png";
   return(
     <>
       <Header page="menu"/>

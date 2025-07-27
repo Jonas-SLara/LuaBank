@@ -1,14 +1,41 @@
-import { createContext,  useState } from "react";
+import { createContext,  useContext,  useState } from "react";
+import Player from "../models/Player";
 
 //criar o contexto
-export const playerContext = createContext(null);
+const PlayerContext = createContext(null);
 
-//criar o provider
-export function PlayerContextProvider({children}){
-    const [name, setName] = useState(null);
+//criar o provider para encapsulamento do contexto
+export function PlayerProvider({children}){
+    
+    const [player, setPlayer] = useState(null);
+    
+    const createPlayer = (namePlayer) => {
+        const newPlayer = new Player(namePlayer);
+        setPlayer(newPlayer);
+        console.log("player criado");
+    }
+
+    const resetPlayer = () => {
+        setPlayer(null);
+    }
+
     return(
-        <playerContext.Provider value={{name, setName}}>
+        <PlayerContext.Provider value={{player, createPlayer, resetPlayer}}>
             {children}
-        </playerContext.Provider>
+        </PlayerContext.Provider>
     );
 }
+
+//hook para usar o contexto apenas dentro do provider
+export const usePlayer = ()=>{
+    const context = useContext(PlayerContext);
+    if(!context){
+        throw new Error("use player fora do provider");
+    }
+    return context;
+}
+
+
+
+
+

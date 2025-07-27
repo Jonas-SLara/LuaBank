@@ -13,6 +13,7 @@
     justify-content: space-around;
 }
 
+
 /*ESTILOS GLOBAIS DE BOTÕES*/
 .button{
   font-weight: 600;
@@ -37,10 +38,23 @@
   background-color: #00F000;
 }
 
+.secure{
+  background-color: #00AACC;
+}
+
 .play{
   background-color: #F57004;
 }
 
 .close{
   background-color: #F52020;
+}
+
+/*input*/
+.input{
+  border:none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  padding: 4px;
+  min-width: 200px;
 }

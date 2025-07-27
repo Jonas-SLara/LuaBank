@@ -3,9 +3,11 @@ import stylesG from '../../styles/common.module.css';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
+import Encerrar from '../../pages/GameView/components/Encerrar/Encerrar';
 import seta from '../../assets/icon-park-twotone_next.png';
 
 function Header({page}){
+
   return(
     <motion.nav initial="hidden" animate="visible"
     variants={{
@@ -36,18 +38,14 @@ function Header({page}){
        <span>Banco Imobiliario</span>       
       </div>
 
-      {/*Botão de encerrar o jogo, vai aparecer somente quando tiver ná página do jogo */}
       <div>
+      {/*Botão de encerrar o jogo, vai aparecer somente quando tiver ná página do jogo */}
       {
         page === "jogo" &&
-          <Link 
-          to={"/"} 
-          className={`${stylesG.button} ${stylesG.close} ${stylesG.link}`}
-          >
-            Encerrar
-          </Link>
+        <Encerrar/>
       }
       </div>
+
     </motion.nav>
   );
 }

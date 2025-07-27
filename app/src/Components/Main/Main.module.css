@@ -19,5 +19,5 @@
 .content {
   z-index: 1;
   padding: 1rem;
-  width: 50%;
+  min-width: 50%;
 }
