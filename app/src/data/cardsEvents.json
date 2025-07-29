@@ -1,0 +1,86 @@
+[
+    {
+        "id": 13,
+        "name": "Reserva de emergência",
+        "description": "Guardou dinheiro na reserva de emergência e depois de um tempo rendeu um dinheiro extra",
+        "event" : "give50",
+        "positive" : true
+    },
+    {
+        "id": 14,
+        "name": "Reserva de emergência",
+        "description": "Guardou dineiro na reserva mas gastou compulsivamente usando a reserva para pagar ás dívidas",
+        "event": "lose50",
+        "positive": false
+    },
+    {
+        "id": 15,
+        "name": "Tempos difíceis",
+        "description": "A inflação alta e os preços aumentando, mas ainda bem que investiu seu dinheiro na Renda fixa antes",
+        "event": "give100",
+        "positive": true
+    },
+    {
+        "id": 16,
+        "name": "Tempos difíceis",
+        "description": "A inflação alta e os preços aumentando, mas você não se preparou o suficiente",
+        "event": "lose50",
+        "positive": false
+    },
+    {
+        "id": 17,
+        "name": "PC Gamer",
+        "description": "você avaliou seu estado financeiro e com um dinheiro extra que guardou, comprou um PC Gamer com uma boa oferta",
+        "event": "give50",
+        "positive": true
+    },
+    {
+        "id": 18,
+        "name": "PC Gamer",
+        "description": "você tinha mais dívidas para pagar porém resolveu mesmo assim comprar um PC Gamer e se apertando nas dívidas",
+        "event": "lose50",
+        "positive":false
+    },
+    {
+        "id": 19,
+        "name": "Carro Novo",
+        "description": "Você decidiu que é hora de comprar um carro novo, depois de anos se organizando financiaramente conseguiu um carro em bom estado",
+        "event": "give150",
+        "positive": true
+    },
+    {
+        "id": 20,
+        "name": "Carro Novo",
+        "description": "Você teve vontade de comprar um carro e comprou o mais barato que achou, porém teve que gastar muito em manutenção",
+        "event": "lose100",
+        "positive":false
+    },
+    {
+        "id": 21,
+        "name": "Neutro",
+        "description": "Reflita e pense",
+        "event": "none",
+        "positive": true
+    },
+    {
+        "id": 22,
+        "name": "Neutro",
+        "description": "Reflita e pense",
+        "event": "none",
+        "positive": true
+    },
+    {
+        "id": 23,
+        "name": "Neutro",
+        "description": "Reflita e pense",
+        "event": "none",
+        "positive": true
+    },
+    {
+        "id": 24,
+        "name": "Neutro",
+        "description": "Reflita e pense",
+        "event": "none",
+        "positive": true
+    }
+]

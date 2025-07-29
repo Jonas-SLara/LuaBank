@@ -1,15 +1,22 @@
-import Board from "../../../../models/Board";
+import Game from "../../../../models/Game";
 import { motion, spring } from "framer-motion";
 import styles from "./BoardGame.module.css";
 import { div } from "framer-motion/client";
+import { useState, useEffect } from "react";
+import { isHouse, isEvent} from "../../../../utils/utils";
 
 const DivMotion = motion(div);
 
 export default function BoardGame() {
-    //cria a matriz
-    const boardGrid = Board.getGrid(Board.createBoardArray());
-    //const cards = Board.getCards(Board.createCards());
-    console.log(boardGrid)
+    //tem que setar como [], se for null ou undefined o .map dara problema, ele vai esperar carregar a array
+    const [boardGrid, setBoardGrid] = useState([]);
+
+    useEffect(()=>{
+        const game = new Game();
+        game.initAll();
+        setBoardGrid(game.getGrid());
+    }, []); //use effect para só iniciar o construtor uma vez na criação do componente
+   
     
     return(
         <DivMotion className={styles.board}
@@ -19,15 +26,12 @@ export default function BoardGame() {
         >
             {
                 boardGrid.map( (line, i) =>
-                    line.map( (e, j) => {
+                    line.map( (c, j) => {
+                        let blockStyle = styles.empty;
+                        blockStyle = isEvent(c) ? styles.event : blockStyle;
+                        blockStyle = isHouse(c) ? styles.house : blockStyle;
                         return(
-                            e!==null ? (
-                                <div key={`${i}-${j}`}
-                                className={styles.house}>
-                                </div>
-                            ):
-                            <div key={`${i}-${j}`} className={styles.empty} />
-                            
+                            <div key={`${i}-${j}`} className={blockStyle} />
                         );
                     })
                 )

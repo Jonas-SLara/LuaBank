@@ -9,8 +9,14 @@
 }
 
 .house{
-    border: solid 1px #000000;
     background-color: #FFFFFF;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.event{
+    background-color: #640590;
     width: 100%;
     height: 100%;
     position: relative;
