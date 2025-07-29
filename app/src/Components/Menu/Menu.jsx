@@ -6,8 +6,8 @@ import { motion } from 'framer-motion';
 import { usePlayer } from '../../context/playerContext';
 
 
-import icon1 from '../../assets/iconIdea.png';
-import icon2 from '../../assets/iconDado.png';
+import icon1 from '/game/iconIdea.png';
+import icon2 from '/game/iconDado.png';
 const LinkMotion = motion(Link);
 
 

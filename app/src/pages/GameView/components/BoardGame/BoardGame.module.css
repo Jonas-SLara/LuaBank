@@ -1,0 +1,24 @@
+.board{
+    width: 100%;
+    min-height: 70vh;
+    border: solid 2px white;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.house{
+    border: solid 1px #000000;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.empty{
+    background-color: #00000000;
+    width: 100%;
+    height: 100%;
+}
+

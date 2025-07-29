@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "name": "Casa moderna",
+        "description": "uma casa simples mas aconchegante com um belo quintal",
+        "ativa": false,
+        "valueUni": 100,
+        "uniCount": 20,
+        "region": "vermelho"
+    },
+    {
+        "id": 2,
+        "name": "Lan House",
+        "description": "quem viveu sabe como era bom :)",
+        "ativa": false,
+        "valueUni": 120,
+        "uniCount": 20,
+        "region": "vermelho"
+    },
+    {
+        "id": 3,
+        "name": "Cafeteria",
+        "description": "Um delicioso café e pão quentinho",
+        "ativa": false,
+        "valueUni": 150,
+        "uniCount": 25,
+        "region": "vermelho"
+    },
+    {
+        "id": 4,
+        "name": "Moto center",
+        "description": "uma revendedora de motos",
+        "ativa": false,
+        "valueUni": 200,
+        "uniCount": 30,
+        "region": "vermelho"
+    },
+    {
+        "id": 5,
+        "name": "Cabana do Sítio",
+        "description": "Um lugar longe da civilização, onde o tempo parou e a calma preenche o lugar",
+        "ativa": false,
+        "valueUni": 100,
+        "uniCount": 20,
+        "region": "verde"
+    },
+    {
+        "id": 6,
+        "name": "Pizza planet",
+        "description": "pizzas exorbitais",
+        "ativa": false,
+        "valueUni": 160,
+        "uniCount": 15,
+        "region": "verde"
+    },
+    {
+        "id": 7,
+        "name": "Academia Maromba",
+        "description": "sua saúde importa",
+        "ativa": false,
+        "valueUni": 150,
+        "uniCount": 25,
+        "region": "verde"
+    },
+    {
+         "id": 8,
+        "name": "Laboratório Tech",
+        "description": "superando novas fronteiras com a tecnologia",
+        "ativa": false,
+        "valueUni": 300,
+        "uniCount": 20,
+        "region": "verde"
+    },
+    {
+        "id": 9,
+        "name": "Salão de festas",
+        "description": "um salão grande para até 300 pessoas para formaturas e aniversários",
+        "ativa": false,
+        "valueUni": 100,
+        "uniCount": 20,
+        "region": "laranja"
+    },
+    {
+        "id": 10,
+        "name": "Pet shop Bixo",
+        "description": "seu pet limpinho e bem cuidado com amor",
+        "ativa": false,
+        "valueUni": 120,
+        "uniCount": 20,
+        "region": "laranja"
+    },
+    {
+        "id": 11,
+        "name": "Distribuidora amatom",
+        "description": "a amaton sempre entrega sob demanda à tempo",
+        "ativa": false,
+        "valueUni": 150,
+        "uniCount": 25,
+        "region": "laranja"
+    },
+    {
+        "id": 12,
+        "name": "Estádio do B.A.R.A.R.FC",
+        "description": "o BARARFC mostra sua vontade e garra para levantar a torcida",
+        "ativa": false,
+        "valueUni": 200,
+        "uniCount": 30,
+        "region": "laranja"
+    } 
+]

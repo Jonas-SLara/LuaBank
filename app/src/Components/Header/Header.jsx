@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 import Encerrar from '../../pages/GameView/components/Encerrar/Encerrar';
-import seta from '../../assets/icon-park-twotone_next.png';
+import seta from '/game/icon-park-twotone_next.png';
 
 function Header({page}){
 
