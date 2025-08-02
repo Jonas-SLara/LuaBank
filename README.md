@@ -33,3 +33,30 @@ _______________________________________________
 [Link pro protótipo no figma](https://www.figma.com/design/1ZqToWNni79YQuaJudrlLu/Jogo-do-banco-Imobilario?node-id=0-1&t=A38d9BysGKyVixUv-1)
 
 [Link pro template no Engaged](https://docs.google.com/document/d/1PoYMowO57KqJXd2PIGKLjQapXWg-2SflWNqnVqUFat4/edit?usp=sharing)
+
+
+## próximos passos
+
+NPC como Player com npc = true:
+
+    Criado junto com o jogador humano em GameView ou encapsulado na Game.
+
+Tela do adversário (ViewPlayer):
+
+    Mostra nome, saldo, propriedades, se é NPC, etc.
+
+    Talvez com estilo diferente (cor ou posição).
+
+Movimentação:
+
+    Dice define o número.
+
+    Atualiza player.position.
+
+    Exibe a peça do jogador no tabuleiro (você vai precisar mapear isso visualmente depois).
+
+Sistema de salvamento:
+
+    Pode vir com localStorage, IndexedDB, ou API backend.
+
+    Uma estrutura GameState contendo grid, jogadores, saldo, itens, turno, etc.

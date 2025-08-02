@@ -3,6 +3,7 @@ import House from "./House";
 import data from "../data/cardsHouse.json";
 import dataEvents from "../data/cardsEvents.json";
 import Events from "./Events";
+import { shuffle } from "../utils/utils";
 
 export default class Board {
     static cards = [];
@@ -55,7 +56,8 @@ export default class Board {
         })
 
         Board.cards = [...cardsHouses, ...cardsEvents];
-        Board.printCards()
+        //embaralha
+        shuffle(Board.cards);
     }
 
     /*preenche as regiões apartir das que existem no arquivo json dos dados */

@@ -1,11 +1,9 @@
 .menu{
-  width: 300px;
-  width: 100%;
+  width: 60%;
   min-height: 50vh;
   border-left: 2px solid white;
   border-right: 2px solid white;
   margin: 10px 0;
-  flex-direction: column;
   gap: 20px;
 }
 

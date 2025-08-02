@@ -1,7 +1,7 @@
 .main{
     width: 100%;
     min-height: 100vh;
-    flex-direction: column;
+    overflow: hidden;
 }
 
 /* camada de imagem com opacidade */
@@ -17,7 +17,7 @@
 
 /* conteúdo por cima da imagem */
 .content {
-  z-index: 1;
+  z-index: 10;
   padding: 1rem;
-  min-width: 50%;
+  width: 90%;
 }

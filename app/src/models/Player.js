@@ -8,31 +8,24 @@ export default class Player {
         this.items = [];
         this.count = 1000;
         this.indexPerfil = 0;
-    }
-    //altera o nome do jogador
-    setName(name){
-        this.name = name;
+        this.play= false; //determina quando um player joga
+        this.npc = false; // determina o modo de jogo, false é interativo
     }
 
-    getName(){
-        return this.name;
-    }
+    //getter and setters
+    setName(name){ this.name = name;}
+    getName(){ return this.name; }
+
+    setCout(x){ this.count =x; }
+    getCount(){ return this.count; }
 
     //altera a imagen de perfil de acordo com o index da imagem no componete Perfil
-    setIndexPerfil(index){
-        this.indexPerfil = index;
-    }
-
-    getIndexPerfil(){
-        return this.indexPerfil;
-    }
+    setIndexPerfil(index){ this.indexPerfil = index; }
+    getIndexPerfil(){ return this.indexPerfil; }
     
-    //tabuleiro tem 42 casas
-    setPosition(x){
-        this.position = (this.position + x)%42;
-    }
+    //muda a posição do jogador de acordo com o valor retirado no dado
+    setPosition(x){ this.position = (this.position + x)%24; }
+    getPosition(){ return this.position; }
 
-    getPosition(){
-        return this.position;
-    }
+
 }

@@ -1,5 +1,5 @@
 .board{
-    width: 100%;
+    width: 60%;
     min-height: 70vh;
     border: solid 2px white;
     display: grid;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import {usePlayer} from '../../context/playerContext';
 
-import styles from "./Perfil.module.css";
+import stylesG from "../../styles/common.module.css";
 
 import p1 from "/perfils/perfil1.png";
 import p2 from "/perfils/perfil2.png";
@@ -10,7 +10,7 @@ import p4 from "/perfils/perfil4.png";
 import p5 from "/perfils/perfil5.png";
 import p6 from "/perfils/perfil6.png";
 
-const perfis = [p1, p2, p3, p4, p5, p6];
+export const perfis = [p1, p2, p3, p4, p5, p6];
 
 
 export default function Perfil(){
@@ -27,7 +27,7 @@ export default function Perfil(){
 
     return(
         <img
-        className={styles.perfil}
+        className={stylesG.perfil}
         src={perfis[index]}
         alt={"perfil"}
         onClick={ () => {setIndex( (index+1)%6 );} }

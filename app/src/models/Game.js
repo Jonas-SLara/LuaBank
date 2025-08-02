@@ -1,11 +1,15 @@
 import Board from "./Board";
+import Player from "./Player";
 
 //precisa ser instanciada
 export default class Game{
-    constructor(){}
+    constructor(){
+        //inicia um npc
+        this.npc = new Player("Big Brother");
+    }
 
     /*Constroi o tabuleiro, criar as cartas, cria o vetor de indices e embaralha 
-    iniciara atributos do jogador e começara a partida*/
+    iniciara atributos do jogador e o npc e começara a partida*/
     initAll(){
         //NESTA ORDEM
         Board.createCards();
@@ -16,5 +20,9 @@ export default class Game{
     }
 
     getCards(){ return Board.cards };
+
     getGrid(){ return Board.grid };
+    
+    getNpc(){ return this.npc; }
+
 }

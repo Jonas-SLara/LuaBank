@@ -6,14 +6,14 @@ function Main({children, bannerURL}) {
   const bannerOn = bannerURL !== null && bannerURL !== undefined;
 
   return(      
-        <div className={`${stylesG.center} ${styles.main}`}>
+        <div className={`${styles.main} ${stylesG.rowCenter}`}>
           {bannerOn && (
             <div
               className={styles.background}
               style={{ backgroundImage: `url(${bannerURL})` }}
             />
           )}
-          <div className={styles.content}>
+          <div className={`${styles.content} ${stylesG.rowCenter}`}>
             {children}
           </div>
         </div>

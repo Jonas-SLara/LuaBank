@@ -1,3 +1,7 @@
+/**Centraliza o estado do jogador (player) para ser usado em toda a aplicação.
+Fornece funções para criar um jogador (createPlayer) e resetar (resetPlayer).
+Utiliza React.createContext e um custom hook usePlayer() para facilitar o acesso seguro ao contexto. */
+
 import { createContext,  useContext,  useState } from "react";
 import Player from "../models/Player";
 
@@ -8,17 +12,19 @@ const PlayerContext = createContext(null);
 export function PlayerProvider({children}){
     
     const [player, setPlayer] = useState(null);
-    
+
+    //função para iniciar o player, instanciar um, logo na home
     const createPlayer = (namePlayer) => {
         const newPlayer = new Player(namePlayer);
         setPlayer(newPlayer);
         console.log("player criado");
     }
 
+    //função para limpar o player, deixar como null
     const resetPlayer = () => {
         setPlayer(null);
     }
-
+    
     return(
         <PlayerContext.Provider value={{player, createPlayer, resetPlayer}}>
             {children}
@@ -34,8 +40,3 @@ export const usePlayer = ()=>{
     }
     return context;
 }
-
-
-
-
-

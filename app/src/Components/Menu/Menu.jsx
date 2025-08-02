@@ -42,7 +42,7 @@ function Menu(){
           }
         },
       }}
-      className={`${stylesG.center} ${styles.menu}`}>
+      className={`${stylesG.rowCenter} ${styles.menu}`}>
       
       <LinkMotion 
       to="/tutorial" 

@@ -7,12 +7,24 @@
     justify-content: center;
 }
 
-.around{
-    display:flex;
-    align-items: center;
-    justify-content: space-around;
+.rowCenter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
 }
 
+.around{
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.responsiveGrow{
+  width: 100%;
+}
 
 /*ESTILOS GLOBAIS DE BOTÕES*/
 .button{
@@ -57,4 +69,12 @@
   font-size: 1.1rem;
   padding: 4px;
   min-width: 200px;
+}
+
+.perfil{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #00000030;
+    border: solid 2px white;
 }
