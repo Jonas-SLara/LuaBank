@@ -27,5 +27,7 @@ export default class Player {
     setPosition(x){ this.position = (this.position + x)%24; }
     getPosition(){ return this.position; }
 
-
+    getPatrimonio(){
+        return 0;
+    }
 }

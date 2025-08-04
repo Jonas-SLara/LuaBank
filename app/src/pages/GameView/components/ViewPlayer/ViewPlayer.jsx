@@ -18,9 +18,10 @@ function ViewPlayer({player}){
                 className={stylesG.perfil}
                 src={perfis[player.getIndexPerfil()]}
                 alt={"perfil"}
-            />
+            /><br/>
             <span>{player.getName()}</span><br/>
-            <span>{player.getCount()}</span>
+            <p>Saldo: <span>{player.getCount()}</span></p>
+            <p>Patrimônio: <span>{player.getPatrimonio()}</span></p>
         </VMotion>
     );
 }

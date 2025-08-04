@@ -9,7 +9,7 @@ export default class Events extends Card{
     }
 
     //aplica um evento de acordo com a função passada
-    applyEffect(){
+    applyEffect(player){
         this.event();
     }
 }

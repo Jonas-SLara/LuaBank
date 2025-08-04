@@ -1,39 +1,51 @@
-import Game from "../../models/Game";
 import Header from "../../Components/Header/Header";
 import Main from "../../Components/Main/Main"
 import BoardGame from "./components/BoardGame/BoardGame";
+
 import banner2 from "/game/cityBanner.png"
+
 import Dice from "./components/Dice/Dice";
 import ViewPlayer from "./components/ViewPlayer/ViewPlayer";
 import stylesG from "../../styles/common.module.css";
-import { useState, useEffect } from "react";
+
 import { usePlayer } from "../../context/playerContext";
+import { useGame } from "../../context/gameContext";
+import { useEffect, useState } from "react";
 
 function GameView(){
 
-    //INICIALIZAÇÃO DE ENTIDADES NO GAME
+    const {player} = usePlayer()
+    const {game, init, diceNum} = useGame();
 
-    //tem que setar como [], se for null ou undefined o .map dara problema, ele vai esperar carregar a array
-    const [boardGrid, setBoardGrid] = useState([]);
-    const game = new Game();
+    //tem jogador mas ainda sem o jogo, então inicializa o jogo na primeira renderização
+    useEffect(()=>{
+        if(player && !game){
+            init();
+        }
+    }, []);
 
     useEffect(()=>{
-        game.initAll();
-        setBoardGrid(game.getGrid());
-    }, []); //use effect para só iniciar o construtor uma vez na criação do componente
-    
-    const {player} = usePlayer();
-    const npc = game.getNpc();
+        console.log("estado de jogo alterado");
+    }, [diceNum])
+
+    //Enquanto eu não tiver esses dados prontos (o game), não tenta renderizar o resto da 
+    //interface que depende deles. Mostra uma tela de carregamento
+    if(!game){
+        return(
+            <p>Carregando ...</p>
+        );
+    }
 
     return(
         <>
             <Header page="jogo"/>
             <Main bannerURL={banner2}>
+                {/*Dado a ser implementado com o sistema de rounds */}
                 <Dice/>
                 <section className={`${stylesG.around} ${stylesG.responsiveGrow}`}>
                     <ViewPlayer player={player}/>
-                    <BoardGame boardGrid={boardGrid}/>
-                    <ViewPlayer player={npc}/>
+                    {<BoardGame/>}
+                    <ViewPlayer player={game.getNpc()}/>
                 </section>
             </Main>
         </>

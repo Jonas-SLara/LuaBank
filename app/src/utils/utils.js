@@ -24,3 +24,13 @@ export const shuffle = (array) => {
         array[indexHash] = obj;
     }
 }
+
+//gera 6 faces aleatorias com valores aleatórios de 1 a 6 sem repetições consecutivass
+export const getRandomDicesFaces = ()=>{
+    let array = new Array(6);
+    for(let i = 1; i<=6; i++){
+        array[i-1]=i;
+    }
+    shuffle(array);
+    return array;
+}

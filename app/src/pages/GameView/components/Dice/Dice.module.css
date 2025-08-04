@@ -1,0 +1,40 @@
+.diceWrapper{
+    perspective: 800px;
+    width: 64px;
+    height: 64px;
+    margin: auto;
+}
+
+.dice{
+    position: relative;
+    width: 64px;
+    height: 64px;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg);
+    margin: auto;
+    cursor: pointer;
+}
+
+.face{
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background: #FFFFFF;
+    border: solid 2px #CCC;
+    border-radius: 8px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 0 10px #333;
+    color: #333;
+}
+
+/*posicionar cada face com tranform + rotate*/
+.front{ transform: rotateY(0deg) translateZ(32px);}
+.back { transform: rotateY(180deg) translateZ(32px);}
+.right{ transform: rotateY(90deg) translateZ(32px);}
+.left { transform: rotateY(-90deg) translateZ(32px);}
+.top { transform: rotateX(90deg) translateZ(32px);}
+.bottom { transform: rotateX(-90deg) translateZ(32px);}

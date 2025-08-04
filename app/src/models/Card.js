@@ -11,11 +11,6 @@ export default class Card {
         this.ativa = false; //por padrao vai ficar escondida
     }
 
-    //método de efeito que será implementado pela classe carta bonus
-    applyEffect(){
-
-    }
-
     printLog(){
         console.log(`${this.id} ${this.ativa} ${this.name} -> ${this.description}`);
     }
