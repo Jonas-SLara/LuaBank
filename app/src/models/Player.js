@@ -23,9 +23,20 @@ export default class Player {
     setIndexPerfil(index){ this.indexPerfil = index; }
     getIndexPerfil(){ return this.indexPerfil; }
     
-    //muda a posição do jogador de acordo com o valor retirado no dado
-    setPosition(x){ this.position = (this.position + x)%24; }
-    getPosition(){ return this.position; }
+     //muda a posição do jogador de acordo com o valor retirado no dado
+    setPosition(x){
+        this.position += x;
+        //se a posição for maior que o tamanho do tabuleiro, volta para o começo
+        if(this.position >= 24){
+            this.position = this.position - 24;
+            //adiciona 200 ao dinheiro do jogador
+            this.count += 200;
+        }
+    }
+    getPosition(){ 
+        console.log("posição do jogador:", this.position);
+        return this.position; 
+    }
 
     getPatrimonio(){
         return 0;

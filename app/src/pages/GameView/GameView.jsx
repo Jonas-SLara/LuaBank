@@ -48,11 +48,19 @@ function GameView(){
             <Main bannerURL={banner2}>
                 {/*Dado a ser implementado com o sistema de rounds */}
                 <Dice/>
+
                 <section className={`${stylesG.around} ${stylesG.responsiveGrow}`}>
-                    <ViewPlayer player={player}/>
-                    {<BoardGame/>}
-                    <ViewPlayer player={game.getNpc()}/>
+                    <ViewPlayer 
+                        player={player} 
+                        active={turn === 1}/>
+
+                    <BoardGame/>
+
+                    <ViewPlayer 
+                        player={game.getNpc()} 
+                        active={turn === 0}/>
                 </section>
+                
                 <button
                     className={stylesG.button}
                     onClick={()=>{

@@ -7,13 +7,13 @@ import {perfis} from "../../../../Components/Perfil/Perfil";
 
 const VMotion = motion(section);
 
-function ViewPlayer({player}){
+function ViewPlayer({player, active}){
     return(
         <VMotion 
         initial={{x: -100, scale: 0.5}}
         animate={{x: 0, scale: 1}}
         transition={{duration: 0.5}}
-        className={styles.view}>
+        className={active ? styles.viewActive : styles.view}>
             <img
                 className={stylesG.perfil}
                 src={perfis[player.getIndexPerfil()]}
