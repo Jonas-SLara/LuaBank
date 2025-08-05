@@ -33,7 +33,7 @@ export default function BoardGame() {
                 )
             }
             <Piece isNpc={true}/>
-            <Piece/>
+            <Piece isNpc={false}/>
         </DivMotion>
     );
 }

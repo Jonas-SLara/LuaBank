@@ -18,6 +18,7 @@ export default class Board {
     }
 
     getGrid(){return this.grid;}
+    getPointsCoord(){return this.pointsCoord;}
 
     /*Cria uma matriz 7x7 e preenche os cantos com casas enquanto no meio preenche com null*/
     createBoardArray(){
@@ -29,19 +30,19 @@ export default class Board {
         //PRENCHER NO SENTIDO HORÁRIO
         //os elementos de cima
         for(let i=0; i<TAM; i++){
-            this.pointsCoord.push({rol: 0, col: i});
+            this.pointsCoord.push({row: 0, col: i});
         }
         //os elementos da direita, pula o topo
         for(let j=1; j<TAM; j++){
-            this.pointsCoord.push({rol: j, col: TAM-1});
+            this.pointsCoord.push({row: j, col: TAM-1});
         }
         //os elementos de baixo, pula o ultimo da direita
         for(let k=TAM-2; k>=0; k--){
-            this.pointsCoord.push({rol: TAM-1, col: k})
+            this.pointsCoord.push({row: TAM-1, col: k})
         }
         //os elementos da esquerda, pula o ultimo de baixo e não le o topo
         for(let l=TAM-2; l>0; l--){
-            this.pointsCoord.push({rol:l, col:0});
+            this.pointsCoord.push({row:l, col:0});
         }
     }
 
@@ -78,7 +79,7 @@ export default class Board {
     //preenche a matriz do tabuleiro nas posições marcadas, no caso as bordas, com as cartas
     fillGrid(){
         this.pointsCoord.forEach( (p, i) => {
-            this.grid[p.rol][p.col] = this.cards[i];
+            this.grid[p.row][p.col] = this.cards[i];
         })
     }
 }

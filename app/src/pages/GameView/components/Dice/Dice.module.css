@@ -34,7 +34,7 @@
 /*posicionar cada face com tranform + rotate*/
 .front{ transform: rotateY(0deg) translateZ(32px);}
 .back { transform: rotateY(180deg) translateZ(32px);}
-.right{ transform: rotateY(90deg) translateZ(32px);}
-.left { transform: rotateY(-90deg) translateZ(32px);}
+.right{ transform: rotateY(-90deg) translateZ(32px);}
+.left { transform: rotateY(90deg) translateZ(32px);}
 .top { transform: rotateX(90deg) translateZ(32px);}
 .bottom { transform: rotateX(-90deg) translateZ(32px);}

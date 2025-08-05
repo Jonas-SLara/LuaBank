@@ -13,9 +13,8 @@ import { useGame } from "../../context/gameContext";
 import { useEffect, useState } from "react";
 
 function GameView(){
-
     const {player} = usePlayer()
-    const {game, init, diceNum} = useGame();
+    const {game, init, diceNum, turn, setTurn, startTurn, setStartTurn} = useGame();
 
     //tem jogador mas ainda sem o jogo, então inicializa o jogo na primeira renderização
     useEffect(()=>{
@@ -24,9 +23,16 @@ function GameView(){
         }
     }, []);
 
+    //quando o numero do dado alterar altera o estado do jogo na classe e atualizar no cotext
+    //usando um useeffect e observando a variavel diceNum, mas e se ele tirar o numero 2 vezes
+    //ai o useEffect não ora perceber que o valor do dado mudou
     useEffect(()=>{
+        if(!game) return;
         console.log("estado de jogo alterado");
-    }, [diceNum])
+        game.handleRolldice(diceNum);
+        setTurn(game.getTurn());
+        setStartTurn(game.isStartTurn());
+    }, [diceNum]);
 
     //Enquanto eu não tiver esses dados prontos (o game), não tenta renderizar o resto da 
     //interface que depende deles. Mostra uma tela de carregamento
@@ -47,6 +53,13 @@ function GameView(){
                     {<BoardGame/>}
                     <ViewPlayer player={game.getNpc()}/>
                 </section>
+                <button
+                    className={stylesG.button}
+                    onClick={()=>{
+                        game.endTurn();
+                        setTurn(game.getTurn());
+                        setStartTurn(game.isStartTurn());
+                    }}>Finalizar Turno</button>
             </Main>
         </>
     );

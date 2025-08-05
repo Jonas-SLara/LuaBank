@@ -19,20 +19,20 @@ function Dice() {
     rotateY: 0
   });
 
-
   //coordenadas de rotação de cada uma das faces
   const faceRotations = {
     1: {x: 0, y: 0},
-    2: {x: 0, y: 90},
-    3: {x: 90, y: 0},
-    4: {x: -90, y: 0},
-    5: {x: 0, y: -90},
-    6: {x: 100, y: 0}
+    2: {x: 0, y: 180},
+    3: {x: 0, y: 90},
+    4: {x: 0, y: -90},
+    5: {x: -90, y: 0},
+    6: {x: 90, y: 0}
   };
 
   //tratar o rolamento do dado
   const handleRoll = () => {
-    //se estiver rolando ou não for sua vez ou não terminou o seu turno então nao gira
+    //se estiver rolando, ou se o jogador já iniciou o turno, ou se não for o turno do jogador, não faz nada
+    //isso evita que o dado seja rolado várias vezes seguidas sem esperar a animação
     if(isRolling || startTurn || turn!== 1) return;
 
     //seta o estado da animação de roll para tru
@@ -43,6 +43,8 @@ function Dice() {
     const finalValue = gameDice.roll();
     const f = faceRotations[finalValue];
     const arr = getRandomDicesFaces();
+
+    console.log("Valor do dado:", finalValue, f);
 
     const keyframesX = [];
     const keyframesY = [];
@@ -60,7 +62,6 @@ function Dice() {
     setTimeout(()=>{
       setDiceNum(finalValue); //muda no contexto do game
       setIsRolling(false);
-      setStartTurn(true);
     }, 1500);
   }
 

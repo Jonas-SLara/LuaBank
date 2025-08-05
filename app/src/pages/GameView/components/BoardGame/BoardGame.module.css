@@ -1,4 +1,5 @@
 .board{
+    position: relative;
     width: 60%;
     min-height: 70vh;
     border: solid 2px white;
