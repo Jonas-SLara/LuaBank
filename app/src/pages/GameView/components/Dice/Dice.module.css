@@ -1,8 +1,16 @@
+.section {
+    position: absolute;
+    top: calc((100% / 2) - auto);
+    left: calc((100% / 2) - auto);
+    z-index: 100;
+}
+
 .diceWrapper{
     perspective: 800px;
     width: 64px;
     height: 64px;
-    margin: auto;
+    margin: 0 auto;
+    margin-bottom: 16px;
 }
 
 .inactive{

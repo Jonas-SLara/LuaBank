@@ -8,6 +8,8 @@
     gap: 1rem;
 }
 
-.form button{
+.form button, .form input{
     width: 20%;
+    padding: 0.8rem;
 }
+

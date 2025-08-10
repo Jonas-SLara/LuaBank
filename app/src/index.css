@@ -6,7 +6,8 @@
 }
 
 body{
-    background-color: #0d64dd;
+    background: linear-gradient(#295695, #1ea5ca);
+    background-repeat: no-repeat;
     color: #FFFFFF;
     font-family: 'Courier New', Courier, monospace;
 }

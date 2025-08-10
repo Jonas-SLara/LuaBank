@@ -82,4 +82,10 @@ export default class Board {
             this.grid[p.row][p.col] = this.cards[i];
         })
     }
+
+    //pega as coordenadas de onde está a carta na matriz apartir do vetor de coordenadas
+    getCardAtPosition(position){
+        const p = this.pointsCoord[position];
+        return this.grid[p.row][p.col];
+    }
 }

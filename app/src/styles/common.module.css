@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position:relative;
 }
 
 .rowCenter{
@@ -13,12 +14,14 @@
   justify-content: center;
   flex-direction: column;
   gap: 1rem;
+  position:relative;
 }
 
 .around{
   display:flex;
   align-items: center;
   justify-content: space-around;
+  position:relative;
 }
 
 

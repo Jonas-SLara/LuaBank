@@ -14,7 +14,8 @@ import { useEffect, useState } from "react";
 
 function GameView(){
     const {player} = usePlayer()
-    const {game, init, diceNum, turn, setTurn, startTurn, setStartTurn} = useGame();
+    const {game, init, diceNum, setDiceNum, turn, setTurn,
+         startTurn, setStartTurn} = useGame();
 
     //tem jogador mas ainda sem o jogo, então inicializa o jogo na primeira renderização
     useEffect(()=>{
@@ -25,11 +26,16 @@ function GameView(){
 
     //quando o numero do dado alterar altera o estado do jogo na classe e atualizar no cotext
     //usando um useeffect e observando a variavel diceNum, mas e se ele tirar o numero 2 vezes
-    //ai o useEffect não ora perceber que o valor do dado mudou
+    //ai o useEffect não ira perceber que o valor do dado mudou
     useEffect(()=>{
         if(!game) return;
+        //altera o estado de jogo e atualiza a position do jogador e o turno dele
         console.log("estado de jogo alterado");
         game.handleRolldice(diceNum);
+        game.getCardAtPosition();
+
+        //finaliza o turno
+        game.endTurn();
         setTurn(game.getTurn());
         setStartTurn(game.isStartTurn());
     }, [diceNum]);
@@ -46,10 +52,9 @@ function GameView(){
         <>
             <Header page="jogo"/>
             <Main bannerURL={banner2}>
-                {/*Dado a ser implementado com o sistema de rounds */}
-                <Dice/>
-
                 <section className={`${stylesG.around} ${stylesG.responsiveGrow}`}>
+                    {/*Dado a ser implementado com o sistema de rounds com position absolute*/}
+                    <Dice/>
                     <ViewPlayer 
                         player={player} 
                         active={turn === 1}/>
@@ -60,14 +65,6 @@ function GameView(){
                         player={game.getNpc()} 
                         active={turn === 0}/>
                 </section>
-                
-                <button
-                    className={stylesG.button}
-                    onClick={()=>{
-                        game.endTurn();
-                        setTurn(game.getTurn());
-                        setStartTurn(game.isStartTurn());
-                    }}>Finalizar Turno</button>
             </Main>
         </>
     );

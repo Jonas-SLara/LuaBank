@@ -33,6 +33,7 @@ export default class Player {
             this.count += 200;
         }
     }
+    
     getPosition(){ 
         console.log("posição do jogador:", this.position);
         return this.position; 

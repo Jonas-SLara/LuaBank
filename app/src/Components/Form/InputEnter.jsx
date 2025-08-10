@@ -22,7 +22,7 @@ function InputEnter(){
         //se não existe um jogador
         if(!player){
             console.log("criando player");
-            createPlayer(nameInput); //setPlayer é assincrono
+            createPlayer(nameInput); 
         }else{
             player.setName(nameInput);
         }
@@ -38,7 +38,7 @@ function InputEnter(){
     }
 
     return(
-    <form className={styles.form} onSubmit={handleInput}>
+    <form className={`${styles.form} ${stylesG.around}`} onSubmit={handleInput}>
         
         { player != null && <Perfil/>}
 

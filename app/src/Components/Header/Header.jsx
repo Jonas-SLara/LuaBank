@@ -2,8 +2,6 @@ import styles from './Header.module.css';
 import stylesG from '../../styles/common.module.css';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
-import Encerrar from '../../pages/GameView/components/Encerrar/Encerrar';
 import seta from '/game/icon-park-twotone_next.png';
 
 function Header({page}){
@@ -38,14 +36,10 @@ function Header({page}){
        <span>Banco Imobiliario</span>       
       </div>
 
+      {/*Botão para o banco */}
       <div>
-      {/*Botão de encerrar o jogo, vai aparecer somente quando tiver ná página do jogo */}
-      {
-        page === "jogo" &&
-        <Encerrar/>
-      }
-      </div>
 
+      </div>
     </motion.nav>
   );
 }

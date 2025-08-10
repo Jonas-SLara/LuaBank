@@ -2,30 +2,28 @@
     position: relative;
     width: 60%;
     min-height: 70vh;
-    border: solid 2px white;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(7, 1fr);
     gap: 2px;
 }
 
-.house{
-    background-color: #FFFFFF;
+.board div{
     width: 100%;
     height: 100%;
     position: relative;
+    border-radius: 40%;
+}
+
+.house{
+    background-color: #FFFFFF;
 }
 
 .event{
-    background-color: #640590;
-    width: 100%;
-    height: 100%;
-    position: relative;
+    background-color: #e8e8e8;
 }
 
 .empty{
     background-color: #00000000;
-    width: 100%;
-    height: 100%;
 }
 
