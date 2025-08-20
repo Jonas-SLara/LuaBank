@@ -37,16 +37,13 @@
   border-radius: 0.5rem;
   color: #FFFFFF;
   box-shadow: #000000AA 0 0 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .button img{
-  float: right;
-}
-
-.button span{
-  display: inline-block;
-  width: 60%;
-  text-align: center;
+  width: 30px;
 }
 
 .info{
@@ -55,6 +52,10 @@
 
 .secure{
   background-color: #00AACC;
+}
+
+.atention{
+  background-color: #F5A623;
 }
 
 .play{

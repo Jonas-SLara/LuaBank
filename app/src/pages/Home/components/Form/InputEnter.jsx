@@ -1,8 +1,8 @@
 import styles from "./Form.module.css";
-import stylesG from "../../styles/common.module.css";
+import stylesG from "../../../../styles/common.module.css";
 
 import { useState } from "react";
-import { usePlayer } from "../../context/playerContext";
+import { usePlayer } from "../../../../context/playerContext";
 import Perfil from "../Perfil/Perfil";
 
 function InputEnter(){

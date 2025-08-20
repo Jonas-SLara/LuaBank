@@ -21,6 +21,5 @@
 /* conteúdo por cima da imagem */
 .content {
   z-index: 10;
-  padding: 1rem;
   width: 90%;
 }

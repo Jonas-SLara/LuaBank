@@ -1,16 +1,9 @@
 import { useEffect, useState } from "react";
-import {usePlayer} from '../../context/playerContext';
+import {usePlayer} from '../../../../context/playerContext';
 
-import stylesG from "../../styles/common.module.css";
-
-import p1 from "/perfils/perfil1.png";
-import p2 from "/perfils/perfil2.png";
-import p3 from "/perfils/perfil3.png";
-import p4 from "/perfils/perfil4.png";
-import p5 from "/perfils/perfil5.png";
-import p6 from "/perfils/perfil6.png";
-
-export const perfis = [p1, p2, p3, p4, p5, p6];
+import stylesG from "../../../../styles/common.module.css";
+import data from "../../../../data/perfis.json";
+const perfis = data.perfis;
 
 
 export default function Perfil(){

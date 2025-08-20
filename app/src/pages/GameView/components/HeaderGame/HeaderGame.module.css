@@ -1,0 +1,22 @@
+.header{
+    position: absolute;
+    top:0;
+    /*no meio*/
+    left:5%;
+    width: 90%;
+    z-index: 10;
+    min-height: 8vh;
+    background: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title{
+    width: 50%;
+    text-align: center;
+}
+
+.op{
+    width: 15%;
+}

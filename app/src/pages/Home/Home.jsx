@@ -1,7 +1,7 @@
-import Main from "../../Components/Main/Main";
-import Menu from "../../Components/Menu/Menu";
-import Header from "../../Components/Header/Header";
-import InputEnter from "../../Components/Form/InputEnter";
+import Main from "./components/Fundo/Fundo"; 
+import Menu from "./components/Menu/Menu";
+import Header from "./components/Header/Header";
+import InputEnter from "./components/Form/InputEnter";
 function Home(){
   const b1 = "/city.png";
   return(

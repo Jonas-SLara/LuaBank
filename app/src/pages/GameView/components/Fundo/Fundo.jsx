@@ -1,8 +1,8 @@
 //boa pratica, usar estilos globais primeiross, depois o do elemento
-import stylesG from '../../styles/common.module.css';
-import styles from './Main.module.css'
+import stylesG from '../../../../styles/common.module.css';
+import styles from './Fundo.module.css'
 
-function Main({children, bannerURL}) {
+function Fundo({children, bannerURL}) {
   const bannerOn = bannerURL !== null && bannerURL !== undefined;
 
   return(      
@@ -20,4 +20,4 @@ function Main({children, bannerURL}) {
     );
 }
 
-export default Main;
+export default Fundo;

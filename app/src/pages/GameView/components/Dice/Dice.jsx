@@ -7,7 +7,7 @@ import { useGame } from "../../../../context/gameContext";
 
 function Dice() {
   //import o contexto do jogo para poder alterar o numero do dado
-  const { game, setDiceNum, turn, startTurn } = useGame();
+  const { game, setDiceNum, turn, startTurn, setStartTurn } = useGame();
 
   if (!game) return;
 
@@ -24,7 +24,7 @@ function Dice() {
 
   //quando for o turno do npc, o dado gira sózinho, para cada vez que o turno alterar
   useEffect(() => {
-    if (turn === 0 && !startTurn) {
+    if (turn === 0 && !startTurn && !isRolling) {
       handleRoll();
     }
   }, [turn, startTurn]);
@@ -67,6 +67,7 @@ function Dice() {
     //espera a animação terminar
     setTimeout(() => {
       setDiceNum(finalValue); //muda no contexto do game
+      setStartTurn(true); //informa que o turno começou
       setIsRolling(false);
     }, 1500);
   }
@@ -101,7 +102,7 @@ function Dice() {
         }}
         className={`${stylesG.button} ${stylesG.play}`}
         style={{ width: "100px" }}
-      > Jogar </button>
+      > <h3>JOGAR</h3></button>
 
     </section>
   );

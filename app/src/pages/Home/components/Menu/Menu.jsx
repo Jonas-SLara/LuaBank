@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import styles from './Menu.module.css';
-import stylesG from '../../styles/common.module.css';
+import stylesG from '../../../../styles/common.module.css';
 import { motion } from 'framer-motion';
-import { usePlayer } from '../../context/playerContext';
+import { usePlayer } from '../../../../context/playerContext';
 
 
 import icon1 from '/game/iconIdea.png';
