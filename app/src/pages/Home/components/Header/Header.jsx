@@ -4,45 +4,32 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import seta from '/game/icon-park-twotone_next.png';
 
-function Header({page}){
+function Header({goBack}){
 
   return(
     <motion.nav initial="hidden" animate="visible"
     variants={{
       hidden: {
+        opacity: 0,
         top: "-10px"
       },
       visible: {
         top: "0px",
+        opacity: 1,
         transition:{
           duration: 0.5
         }
       },
     }}
-    
-    className={`${styles.nav} ${stylesG.around}`}>
-      
-      {/*seta de navegação para voltar para a home quando a página não foro menu */}
-      <div>
-      { page !== "menu" &&
-          <Link to={"/"} className={styles.link}>
-                <img 
-                src={seta} 
-                width={"32px"}
-                alt={"Voltar"}/>
-          </Link>
-      }
-      </div> 
 
-      {/* titulo do cabeçalho sempre padrão */}
-      <div className={styles.titulo}>
-       <h1>Banco Imobiliario</h1>       
-      </div>
-
+    className={styles.nav}>
+      {/*Logo do dado*/}
       <div className={styles.logo}>
-        <span>Logo</span>
+        <img src="/game/iconDado.png" alt="Logo do Dado" />
       </div>
-    
+      <div className={styles.titulo}>
+       <h1>BANCO IMOBILIÁRIO</h1>       
+      </div>
     </motion.nav>
   );
 }

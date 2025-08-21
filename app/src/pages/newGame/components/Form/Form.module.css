@@ -1,0 +1,15 @@
+.form{
+    border-radius: 1rem;
+    border: solid 2px #000000;
+    width: 60%;
+    padding: 8px;
+    background-color: #000000CC;
+    display:flex;
+    gap: 1rem;
+}
+
+.form button, .form input{
+    width: 20%;
+    padding: 0.8rem;
+}
+

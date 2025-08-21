@@ -1,19 +1,17 @@
-//boa pratica, usar estilos globais primeiross, depois o do elemento
-import stylesG from '../../../../styles/common.module.css';
 import styles from './Fundo.module.css'
 
 function Fundo({children, bannerURL}) {
   const bannerOn = bannerURL !== null && bannerURL !== undefined;
 
   return(      
-        <div className={`${styles.main} ${stylesG.rowCenter}`}>
-          {bannerOn && (
-            <div
-              className={styles.background}
-              style={{ backgroundImage: `url(${bannerURL})` }}
-            />
-          )}
-          <div className={`${styles.content} ${stylesG.rowCenter}`}>
+        <div className={`${styles.main}`}>
+            <div className={styles.background}>
+              {/* exibe a imagem de fundo se haver uma url*/}
+              {bannerOn && (
+                <img src={bannerURL} alt="Banner" />
+              )}
+            </div>
+          <div className={styles.content}>
             {children}
           </div>
         </div>

@@ -1,11 +1,14 @@
 .nav{
-  position: relative;
+  position: fixed;
   z-index: 1;
   width: 100%;
   top:0;
-  min-height: 10vh;
-  background: linear-gradient(180deg, #454545b5, #5e5e5eb5);
-  padding: 8px;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 

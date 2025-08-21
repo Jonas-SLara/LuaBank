@@ -1,16 +1,16 @@
-import Main from "./components/Fundo/Fundo"; 
+import Fundo from "./components/Fundo/Fundo"; 
 import Menu from "./components/Menu/Menu";
 import Header from "./components/Header/Header";
-import InputEnter from "./components/Form/InputEnter";
+
+/*Menu enter para renderizar as opções de jogo */
 function Home(){
   const b1 = "/city.png";
   return(
     <>
-      <Header page="menu"/>
-      <Main bannerURL={b1}>
-        <InputEnter></InputEnter>
-        <Menu></Menu>
-      </Main>          
+      <Header/>
+      <Fundo bannerURL={b1}>
+        <Menu/>
+      </Fundo>          
     </>
   );
 }
