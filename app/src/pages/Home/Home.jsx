@@ -1,15 +1,17 @@
 import Fundo from "./components/Fundo/Fundo"; 
 import Menu from "./components/Menu/Menu";
 import Header from "./components/Header/Header";
+import ListButtons from "./components/ListButtons/ListButtons";
 
-/*Menu enter para renderizar as opções de jogo */
 function Home(){
   const b1 = "/city.png";
   return(
     <>
-      <Header/>
+      <Header titulo="BANCO IMOBILIÁRIO"/>
       <Fundo bannerURL={b1}>
-        <Menu/>
+        <Menu>
+          <ListButtons/>
+        </Menu>
       </Fundo>          
     </>
   );

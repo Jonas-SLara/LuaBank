@@ -1,10 +1,10 @@
 import Main from "./components/Fundo/Fundo";
-import Header from "./components/Header/Header";
+import Return from "../newGame/components/Return/Return"
 
 function Tutorial(){
     return(
         <>
-            <Header page="tutorial"/>
+            <Return/>
             <Main>
                 
             </Main>

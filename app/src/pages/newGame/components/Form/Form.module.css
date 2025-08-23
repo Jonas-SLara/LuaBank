@@ -1,15 +1,42 @@
 .form{
-    border-radius: 1rem;
-    border: solid 2px #000000;
-    width: 60%;
-    padding: 8px;
-    background-color: #000000CC;
+    width: 100%;
+    min-height: 12vh;
+    padding: 10px;
+    background-color: #000000AA;
     display:flex;
+    align-items: center;
+    justify-content: flex-start;
     gap: 1rem;
+  
 }
 
-.form button, .form input{
+.form *{
+    font-size: 1.1rem;
+}
+
+.form button{
     width: 20%;
-    padding: 0.8rem;
+    padding: 8px;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #FFFFFFCC;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+}
+
+.form input{
+    border: none;
+    padding: 8px;
+    color: #333333;
+    border-radius: 8px;
+}
+
+.secure{
+    background-color: #1A5394;
+}
+
+.reset{
+    background-color: #FE1A1A;
 }
 

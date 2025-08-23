@@ -1,6 +1,6 @@
 .section {
     position: absolute;
-    top: calc((100% / 2) - auto);
+    top: calc((100% / 2) - 100px);
     left: calc((100% / 2) - auto);
     z-index: 100;
 }

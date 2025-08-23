@@ -1,21 +1,15 @@
-import Main from "./components/Fundo/Fundo";
-import BoardGame from "./components/BoardGame/BoardGame";
-import CardModal from "./components/CardModal/CardModal";
+import Fundo from "../Home/components/Fundo/Fundo";
+import Leave from "./components/Leave/Leave";
+import GameMain from "./components/GameMain/GameMain";
 import banner2 from "/game/cityBanner.png";
-
-import Dice from "./components/Dice/Dice";
-import ViewPlayer from "./components/ViewPlayer/ViewPlayer";
-import stylesG from "../../styles/common.module.css";
-
 import { usePlayer } from "../../context/playerContext";
 import { useGame } from "../../context/gameContext";
 import { useEffect, useState } from "react";
-import HeaderGamer from "./components/HeaderGame/HeaderGame";
+import Bank from "./components/Bank/Bank";
 
 function GameView() {
     const { player } = usePlayer()
-    const { game, init, diceNum, setDiceNum, turn, setTurn,
-        startTurn, setStartTurn } = useGame();
+    const { game, init, diceNum, setTurn, startTurn, setStartTurn } = useGame();
     const [card, setCard] = useState(null);
 
     //tem jogador mas ainda sem o jogo, então inicializa o jogo na primeira renderização
@@ -48,23 +42,10 @@ function GameView() {
 
     return (
         <>
-            <HeaderGamer></HeaderGamer>
-            <Main bannerURL={banner2}>
-                
-                <section className={`${stylesG.around} ${stylesG.responsiveGrow}`}>
-                    {/*Dado a ser implementado com o sistema de rounds com position absolute*/}
-                    <Dice />
-                    <ViewPlayer
-                        player={player}
-                        active={turn === 1} />
-
-                    <BoardGame />
-
-                    <ViewPlayer
-                        player={game.getNpc()}
-                        active={turn === 0} />
-                </section>
-
+            <Leave/>
+            <Bank/>
+            <Fundo bannerURL={banner2}>                
+                <GameMain/>
                 <button onClick={() => {
                     //finaliza o turno
                     game.endTurn();
@@ -73,7 +54,7 @@ function GameView() {
                 }}>
                     Finalizar Turno
                 </button>
-            </Main>
+            </Fundo>
         </>
     );
 }
