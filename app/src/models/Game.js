@@ -19,7 +19,9 @@ export default class Game {
     getNpc() { return this.npc; }
     getPlayer() { return this.player; }
     getDice() { return this.dice; }
-
+    getTurn() { return this.turn; }
+    isStartTurn() { return this.startTurn; }
+    
     /*Constroi o tabuleiro, criar as cartas, cria o vetor de indices e embaralha 
     iniciara atributos do jogador e o npc e começara a partida*/
     initAll() {
@@ -29,9 +31,6 @@ export default class Game {
         this.board.fillRegions();
         this.board.fillGrid();
     }
-
-    getTurn() { return this.turn; }
-    isStartTurn() { return this.startTurn; }
 
     //após o resultado do dado tratar a jogada, valor padrão é o do dado
     handleRolldice(value) {
