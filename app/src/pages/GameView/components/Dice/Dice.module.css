@@ -1,8 +1,21 @@
+.section {
+    position: absolute;
+    top: calc((100% / 2) - 100px);
+    left: calc((100% / 2) - auto);
+    z-index: 100;
+}
+
 .diceWrapper{
     perspective: 800px;
     width: 64px;
     height: 64px;
-    margin: auto;
+    margin: 0 auto;
+    margin-bottom: 16px;
+}
+
+.inactive{
+    cursor: not-allowed;
+    opacity: 0.7;
 }
 
 .dice{
@@ -34,7 +47,7 @@
 /*posicionar cada face com tranform + rotate*/
 .front{ transform: rotateY(0deg) translateZ(32px);}
 .back { transform: rotateY(180deg) translateZ(32px);}
-.right{ transform: rotateY(90deg) translateZ(32px);}
-.left { transform: rotateY(-90deg) translateZ(32px);}
+.right{ transform: rotateY(-90deg) translateZ(32px);}
+.left { transform: rotateY(90deg) translateZ(32px);}
 .top { transform: rotateX(90deg) translateZ(32px);}
 .bottom { transform: rotateX(-90deg) translateZ(32px);}

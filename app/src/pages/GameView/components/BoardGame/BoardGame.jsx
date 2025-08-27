@@ -11,6 +11,7 @@ const DivMotion = motion(div);
 export default function BoardGame() {
     const {game} = useGame();
     if(!game) return;
+    
 
     const boardGrid = game.getBoard().getGrid();
 
@@ -33,7 +34,7 @@ export default function BoardGame() {
                 )
             }
             <Piece isNpc={true}/>
-            <Piece/>
+            <Piece isNpc={false}/>
         </DivMotion>
     );
 }

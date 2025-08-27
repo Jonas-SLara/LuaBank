@@ -1,41 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./Dice.module.css";
+import stylesG from "../../../../styles/common.module.css";
 import { getRandomDicesFaces } from "../../../../utils/utils";
 import { useGame } from "../../../../context/gameContext";
 
 function Dice() {
   //import o contexto do jogo para poder alterar o numero do dado
-  const {game, setDiceNum, turn, startTurn, setStartTurn} = useGame();
-  if(!game) return;
+  const { game, setDiceNum, turn, startTurn, setStartTurn } = useGame();
+
+  if (!game) return;
 
   const gameDice = game.getDice();
 
   //seta a variavel para quando estiver rolando
   const [isRolling, setIsRolling] = useState(false);
+
   //seta a rotação do angulo de onde está a face
   const [rotation, setRotation] = useState({
     rotateX: 0,
     rotateY: 0
   });
 
+  //quando for o turno do npc, o dado gira sózinho, para cada vez que o turno alterar
+  useEffect(() => {
+    if (turn === 0 && !startTurn && !isRolling) {
+      handleRoll();
+    }
+  }, [turn, startTurn]);
 
   //coordenadas de rotação de cada uma das faces
   const faceRotations = {
-    1: {x: 0, y: 0},
-    2: {x: 0, y: 90},
-    3: {x: 90, y: 0},
-    4: {x: -90, y: 0},
-    5: {x: 0, y: -90},
-    6: {x: 100, y: 0}
+    1: { x: 0, y: 0 },
+    2: { x: 0, y: 180 },
+    3: { x: 0, y: 90 },
+    4: { x: 0, y: -90 },
+    5: { x: -90, y: 0 },
+    6: { x: 90, y: 0 }
   };
 
   //tratar o rolamento do dado
   const handleRoll = () => {
-    //se estiver rolando ou não for sua vez ou não terminou o seu turno então nao gira
-    if(isRolling || startTurn || turn!== 1) return;
-
-    //seta o estado da animação de roll para tru
+    //seta o estado da animação de roll para true
     setIsRolling(true);
 
     //simular uma rotação extra
@@ -44,43 +50,61 @@ function Dice() {
     const f = faceRotations[finalValue];
     const arr = getRandomDicesFaces();
 
+    console.log("Valor do dado:", finalValue, f);
+
     const keyframesX = [];
     const keyframesY = [];
 
-    for(let i= arr.length; i>0; i--){
-      keyframesX.push(faceRotations[arr[i-1]].x);
-      keyframesY.push(faceRotations[arr[i-1]].y)
+    for (let i = arr.length; i > 0; i--) {
+      keyframesX.push(faceRotations[arr[i - 1]].x);
+      keyframesY.push(faceRotations[arr[i - 1]].y)
     }
     keyframesX.push(f.x);
     keyframesY.push(f.y);
-   
-    setRotation({rotateX: keyframesX, rotateY: keyframesY});
 
-     //espera a animação terminar
-    setTimeout(()=>{
+    setRotation({ rotateX: keyframesX, rotateY: keyframesY });
+
+    //espera a animação terminar
+    setTimeout(() => {
       setDiceNum(finalValue); //muda no contexto do game
+      setStartTurn(true); //informa que o turno começou
       setIsRolling(false);
-      setStartTurn(true);
     }, 1500);
   }
 
   //uso do framer motion para a animação
   return (
-    <div className={styles.diceWrapper}>
-      <motion.div
-        className={styles.dice}
-        onClick={handleRoll}
-        animate={rotation} 
-        transition={{ duration: 1.5}} 
-      >
-        <div className={`${styles.face} ${styles.front}`}>1</div>
-        <div className={`${styles.face} ${styles.back}`}>2</div>
-        <div className={`${styles.face} ${styles.right}`}>3</div>
-        <div className={`${styles.face} ${styles.left}`}>4</div>
-        <div className={`${styles.face} ${styles.top}`}>5</div>
-        <div className={`${styles.face} ${styles.bottom}`}>6</div>
-      </motion.div>
-    </div>
+    <section className={styles.section}>
+      <div className={(!isRolling && !startTurn && turn === 1) ?
+        `${styles.diceWrapper}` :
+        `${styles.diceWrapper} ${styles.inactive}`
+      }>
+        <motion.div
+          className={styles.dice}
+          animate={rotation}
+          transition={{ duration: 1.5 }}
+        >
+          <div className={`${styles.face} ${styles.front}`}>1</div>
+          <div className={`${styles.face} ${styles.back}`}>2</div>
+          <div className={`${styles.face} ${styles.right}`}>3</div>
+          <div className={`${styles.face} ${styles.left}`}>4</div>
+          <div className={`${styles.face} ${styles.top}`}>5</div>
+          <div className={`${styles.face} ${styles.bottom}`}>6</div>
+        </motion.div>
+      </div>
+
+      <button
+        onClick={() => {
+          //só pode chamar a função handleRoll com click se for a vez do jogador
+          if (!isRolling && !startTurn && turn === 1) {
+            handleRoll();
+          }
+        }}
+        className={`${stylesG.button} ${stylesG.play}`}
+        style={{ width: "100px" }}
+      > <h3>JOGAR</h3></button>
+
+    </section>
   );
 }
 

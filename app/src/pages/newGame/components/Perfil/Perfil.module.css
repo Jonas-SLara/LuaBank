@@ -1,0 +1,58 @@
+.perfilContainer{
+    width: 20%;
+    min-width: 100px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+}
+
+.perfil{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.perfilImg{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #FFFFFFCC;
+}
+
+.icon{
+    position:absolute;
+    top: calc(50% - 32px);
+    cursor: pointer;
+    padding: 2px;
+}
+
+.icon img{
+    width: 32px;
+    height: 42px;
+}
+
+.next{
+    right: -42px;
+}
+
+.before{
+    left: -42px;
+}
+.before img{
+    transform: rotateY(180deg);
+}
+
+.play{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #19D00F;
+    width: 100%;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 8px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+}

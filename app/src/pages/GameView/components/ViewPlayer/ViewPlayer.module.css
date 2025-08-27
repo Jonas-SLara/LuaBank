@@ -1,8 +1,21 @@
 .view{
-    background-color: #111111;
+    background: linear-gradient(45deg, #454343, #282727);
     width: 15%;
     height: 40vh;
     border-radius: 8px;
     text-align: center;
     padding: 8px;
+    border: solid 2px #333;
+    box-shadow: 0 0 10px #000000AA;
+}
+
+.viewActive{
+    background: linear-gradient(45deg, #454343, #282727);
+    width: 15%;
+    height: 40vh;
+    border-radius: 8px;
+    text-align: center;
+    padding: 8px;
+    border: solid 4px #ffffff;
+    box-shadow: 0 0 10px #f1f1f1aa;
 }

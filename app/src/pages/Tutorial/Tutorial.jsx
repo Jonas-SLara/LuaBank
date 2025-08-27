@@ -1,11 +1,10 @@
-import Main from "../../Components/Main/Main";
-import Header from "../../Components/Header/Header";
-import { Link } from "react-router-dom";
+import Main from "./components/Fundo/Fundo";
+import Return from "../newGame/components/Return/Return"
 
 function Tutorial(){
     return(
         <>
-            <Header page="tutorial"/>
+            <Return/>
             <Main>
                 
             </Main>

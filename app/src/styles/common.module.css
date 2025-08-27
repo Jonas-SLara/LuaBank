@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position:relative;
 }
 
 .rowCenter{
@@ -13,12 +14,14 @@
   justify-content: center;
   flex-direction: column;
   gap: 1rem;
+  position:relative;
 }
 
 .around{
   display:flex;
   align-items: center;
   justify-content: space-around;
+  position:relative;
 }
 
 
@@ -34,24 +37,25 @@
   border-radius: 0.5rem;
   color: #FFFFFF;
   box-shadow: #000000AA 0 0 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .button img{
-  float: right;
-}
-
-.button span{
-  display: inline-block;
-  width: 60%;
-  text-align: center;
+  width: 30px;
 }
 
 .info{
-  background-color: #00F000;
+  background-color: #19D00F;
 }
 
 .secure{
   background-color: #00AACC;
+}
+
+.atention{
+  background-color: #F5A623;
 }
 
 .play{

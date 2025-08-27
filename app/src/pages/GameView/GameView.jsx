@@ -1,53 +1,58 @@
-import Header from "../../Components/Header/Header";
-import Main from "../../Components/Main/Main"
-import BoardGame from "./components/BoardGame/BoardGame";
-
-import banner2 from "/game/cityBanner.png"
-
-import Dice from "./components/Dice/Dice";
-import ViewPlayer from "./components/ViewPlayer/ViewPlayer";
-import stylesG from "../../styles/common.module.css";
-
+import Fundo from "../Home/components/Fundo/Fundo";
+import Leave from "./components/Leave/Leave";
+import EndTurn from "./components/EndTurn/EndTurn";
+import GameMain from "./components/GameMain/GameMain";
+import CardModal from "./components/CardModal/CardModal";
+import banner2 from "/city2.png";
 import { usePlayer } from "../../context/playerContext";
 import { useGame } from "../../context/gameContext";
 import { useEffect, useState } from "react";
+import Bank from "./components/Bank/Bank";
 
-function GameView(){
+function GameView() {
+    const { player } = usePlayer()
+    const { game, init, diceNum, startTurn } = useGame();
+    const [card, setCard] = useState(null);
 
-    const {player} = usePlayer()
-    const {game, init, diceNum} = useGame();
-
-    //tem jogador mas ainda sem o jogo, então inicializa o jogo na primeira renderização
-    useEffect(()=>{
-        if(player && !game){
+    //tem jogador mas ainda sem o jogo, então inicializa o jogo
+    useEffect(() => {
+        if (player && !game) {
             init();
         }
     }, []);
 
-    useEffect(()=>{
-        console.log("estado de jogo alterado");
-    }, [diceNum])
+    //sempre que alterar o numero do dado e iniciar um turno novamente
+    useEffect(() => {
+        if (!game) return;
+        if (startTurn) {
+            //altera o estado de jogo e atualiza a position do jogador e o turno dele
+            console.log("estado de jogo alterado");
+            game.handleRolldice(diceNum);
+            
+            console.log(game.getCardAtPosition());
 
-    //Enquanto eu não tiver esses dados prontos (o game), não tenta renderizar o resto da 
-    //interface que depende deles. Mostra uma tela de carregamento
-    if(!game){
-        return(
+            if(game.getTurn()==1){
+                setCard(game.getCardAtPosition());
+            }
+        }
+    }, [diceNum, startTurn]);
+
+    //valvula de escape para enquanto não tiver o game pronto
+    if (!game) {
+        return (
             <p>Carregando ...</p>
         );
     }
 
-    return(
+    return (
         <>
-            <Header page="jogo"/>
-            <Main bannerURL={banner2}>
-                {/*Dado a ser implementado com o sistema de rounds */}
-                <Dice/>
-                <section className={`${stylesG.around} ${stylesG.responsiveGrow}`}>
-                    <ViewPlayer player={player}/>
-                    {<BoardGame/>}
-                    <ViewPlayer player={game.getNpc()}/>
-                </section>
-            </Main>
+            <Leave/>
+            <EndTurn/>
+            <Bank/>
+            <Fundo bannerURL={banner2}>                
+                <GameMain/>
+            </Fundo>
+            <CardModal card={card} setCard={setCard}/>
         </>
     );
 }
