@@ -7,7 +7,6 @@ const VMotion = motion(section);
 
 //passa a url do perfil do jogador ou npc
 function ViewPlayer({player, active}){
-    console.log(data)
     return(
         <VMotion 
         initial={{x: -100, scale: 0.5}}

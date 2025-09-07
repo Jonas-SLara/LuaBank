@@ -1,110 +1,122 @@
 [
     {
         "id": 1,
-        "name": "Casa moderna",
+        "name": "CASA MODERNA",
         "description": "uma casa simples mas aconchegante com um belo quintal",
         "ativa": false,
         "valueUni": 100,
         "uniCount": 20,
-        "region": "vermelho"
+        "region": "vermelho",
+        "dividends": 10
     },
     {
         "id": 2,
-        "name": "Lan House",
+        "name": "LAN HOUSE",
         "description": "quem viveu sabe como era bom :)",
         "ativa": false,
         "valueUni": 120,
         "uniCount": 20,
-        "region": "vermelho"
+        "region": "vermelho",
+        "dividends": 9.5
     },
     {
         "id": 3,
-        "name": "Cafeteria",
+        "name": "CAFETERIA",
         "description": "Um delicioso café e pão quentinho",
         "ativa": false,
         "valueUni": 150,
         "uniCount": 25,
-        "region": "vermelho"
+        "region": "vermelho",
+        "dividends": 9
     },
     {
         "id": 4,
-        "name": "Moto center",
+        "name": "MOTO CENTER",
         "description": "uma revendedora de motos",
         "ativa": false,
         "valueUni": 200,
         "uniCount": 30,
-        "region": "vermelho"
+        "region": "vermelho",
+        "dividends": 8.8
     },
     {
         "id": 5,
-        "name": "Cabana do Sítio",
+        "name": "CABANA DO SÍTIO",
         "description": "Um lugar longe da civilização, onde o tempo parou e a calma preenche o lugar",
         "ativa": false,
         "valueUni": 100,
         "uniCount": 20,
-        "region": "verde"
+        "region": "verde",
+        "dividends": 12
     },
     {
         "id": 6,
-        "name": "Pizza planet",
+        "name": "PIZZA PLANET",
         "description": "pizzas exorbitais",
         "ativa": false,
         "valueUni": 160,
         "uniCount": 15,
-        "region": "verde"
+        "region": "verde",
+        "dividends": 11
     },
     {
         "id": 7,
-        "name": "Academia Maromba",
+        "name": "ACADEMIA MAROMBA",
         "description": "sua saúde importa",
         "ativa": false,
         "valueUni": 150,
         "uniCount": 25,
-        "region": "verde"
+        "region": "verde",
+        "dividends": 12
     },
     {
-         "id": 8,
-        "name": "Laboratório Tech",
+        "id": 8,
+        "name": "LABORATÓRIO TECH",
         "description": "superando novas fronteiras com a tecnologia",
         "ativa": false,
         "valueUni": 300,
         "uniCount": 20,
-        "region": "verde"
+        "region": "verde",
+        "dividends": 7.8
     },
     {
         "id": 9,
-        "name": "Salão de festas",
+        "name": "SALÃO DE FESTAS",
         "description": "um salão grande para até 300 pessoas para formaturas e aniversários",
         "ativa": false,
         "valueUni": 100,
         "uniCount": 20,
-        "region": "laranja"
+        "region": "laranja",
+        "dividends": 10
     },
     {
         "id": 10,
-        "name": "Pet shop Bixo",
+        "name": "PET SHOP BIXO",
         "description": "seu pet limpinho e bem cuidado com amor",
         "ativa": false,
         "valueUni": 120,
         "uniCount": 20,
-        "region": "laranja"
+        "region": "laranja",
+        "dividends": 10
     },
     {
         "id": 11,
-        "name": "Distribuidora amatom",
+        "name": "DISTRIBUIDORA AMATOM",
         "description": "a amaton sempre entrega sob demanda à tempo",
         "ativa": false,
         "valueUni": 150,
         "uniCount": 25,
-        "region": "laranja"
+        "region": "laranja",
+        "dividends": 10
     },
     {
         "id": 12,
-        "name": "Estádio do B.A.R.A.R.FC",
+        "name": "ESTÁDIO DO B.A.R.A.R.FC",
         "description": "o BARARFC mostra sua vontade e garra para levantar a torcida",
         "ativa": false,
         "valueUni": 200,
         "uniCount": 30,
-        "region": "laranja"
+        "region": "laranja",
+        "dividends": 8
     } 
 ]

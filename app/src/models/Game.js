@@ -6,8 +6,8 @@ import Dice from "./Dice";
 export default class Game {
     //receberá o jogador Principal como parametro para acessalo
     constructor(player) {
-        //inicia um npc
-        this.npc = new Player("Big Brother");
+        //inicia um npc com id=0
+        this.npc = new Player("Big Brother", 0);
         this.board = new Board();
         this.player = player;
         this.dice = new Dice();
@@ -51,7 +51,6 @@ export default class Game {
     endTurn() {
         this.turn = this.turn === 1 ? 0 : 1;
         this.startTurn = false;
-        console.log("Turno finalizado, próximo jogador:", this.turn === 1 ? "Player" : "NPC");
     }
 
     //apos fazer a jogada saca a carta do jogador naquela posição e mostra
@@ -64,6 +63,9 @@ export default class Game {
         if (!card) {
             throw new Error("Carta não encontrada na posição: " + position);
         }
+        //o ojeto card que esta uma array de cards no Board, é uma instancia
+        //de Evento ou House
+        console.log(card.getName()+" "+card.getId());
         return card;
     }
 }

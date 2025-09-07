@@ -55,11 +55,11 @@ export default class Board {
     createCards(){
         const cardsHouses = data.map( c => {
             return new House(c.id, c.name, c.description, c.valueUni, 
-                c.uniCount, c.region);
+                c.uniCount, c.dividends, c.region);
         })
 
         const cardsEvents = dataEvents.map( c=> {
-        return new Events(c.id, c.name, c.description, null, c.positive);
+            return new Events(c.id, c.name, c.description, null, c.positive);
         })
 
         this.cards = [...cardsHouses, ...cardsEvents];

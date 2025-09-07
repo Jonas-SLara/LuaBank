@@ -7,6 +7,7 @@ import banner2 from "/city2.png";
 import { usePlayer } from "../../context/playerContext";
 import { useGame } from "../../context/gameContext";
 import { useEffect, useState } from "react";
+
 import Bank from "./components/Bank/Bank";
 
 function GameView() {
@@ -29,8 +30,7 @@ function GameView() {
             console.log("estado de jogo alterado");
             game.handleRolldice(diceNum);
             
-            console.log(game.getCardAtPosition());
-
+            //se for o turno do jogador saca a carta dele
             if(game.getTurn()==1){
                 setCard(game.getCardAtPosition());
             }

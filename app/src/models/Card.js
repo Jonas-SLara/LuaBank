@@ -8,11 +8,9 @@ export default class Card {
         this.id = id;
         this.name = name_;
         this.description = description;
-        this.ativa = false; //por padrao vai ficar escondida
     }
 
-    printLog(){
-        console.log(`${this.id} ${this.ativa} ${this.name} -> ${this.description}`);
-    }
-
+    getId(){ return this.id; }
+    getName(){ return this.name; }
+    getDescription(){ return this.description; }
 }

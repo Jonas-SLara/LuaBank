@@ -1,12 +1,12 @@
 import Events from "../models/Events";
 import House from "../models/House"
 
-//verifica se uma carta é uma instancia de casa
+//verifica se um objeto carta é uma instancia de casa
 export const isHouse = (card) => {
     return (card instanceof House) ? true : false;
 }
 
-//verifica se uma carta é uma instancia de evento
+//verifica se um objeto carta é uma instancia de evento
 export const isEvent = (card) => {
     return (card instanceof Events) ? true : false;
 }
