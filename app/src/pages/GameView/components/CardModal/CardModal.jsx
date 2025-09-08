@@ -1,6 +1,7 @@
 import { motion, spring } from "framer-motion";
 import styles from "./CardModal.module.css"
 import { isEvent, isHouse } from "../../../../utils/utils";
+import { useGame } from "../../../../context/gameContext";
 /* 
 * um modal que recebe um hook vindo do GameView toda vez que
 * for o turno do jogador e ele começar a jogada em uma casa do tabuleiro
@@ -12,7 +13,13 @@ const Overlay = motion.div;
 const Modal = motion.div;
 
 const CardModal = ({ card, setCard }) => {
+    //usar o contexto do jogo para extrair e alterar informações
+    const {game} = useGame();
+    if(!game) return null;
     if (!card) return null; //não renderiza
+
+    const player = game.getPlayer();
+
     return (
         <Overlay
             className={styles.overlay}
@@ -33,7 +40,7 @@ const CardModal = ({ card, setCard }) => {
                 onClick={() => { setCard(null) }}
                 className={styles.btn_modal_close}
             > 
-                X
+                <span>X</span>
             </button>
 
             {/*Aqui o conteúdo e funcionalidades mudam com o tipo de card */}
@@ -52,8 +59,27 @@ const CardModal = ({ card, setCard }) => {
 
                 <p style={{width: "100%"}} className={styles.p_important}>COMPRADORES</p>
                 <div className={styles.model_buyers}>
-                   <p>jogador: </p>
-                   <p>npc: </p>
+                    <div className={styles.model_buyer}>
+                        <p>{game.getPlayer().getName()}:</p>
+                        <div 
+                            className={styles.player_box} 
+                            id="totalCotasPlayer1"
+                        />
+                        <p></p>                       
+                    </div>
+                    <div className={styles.model_buyer}>
+                        <p>{game.getNpc().getName()}:</p>
+                        <div 
+                            className={styles.player_box}
+                            id="totalCotasPlayer0"
+                        />
+                        <p></p>                        
+                    </div>
+                    <button
+                        onClick={()=>{game.controlPlayerAction(card, 1, 1)}}
+                    >
+                        Comprar +1
+                    </button>
                 </div>
             </div>
             }

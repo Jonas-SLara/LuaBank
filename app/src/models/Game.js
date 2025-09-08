@@ -68,4 +68,12 @@ export default class Game {
         console.log(card.getName()+" "+card.getId());
         return card;
     }
+
+    //função do game que controla a sequencia de compra de cotas
+    controlPlayerAction(card, idPlayer, amount){
+        const p = (idPlayer === 1)? this.player : this.npc;
+        console.log(`comprando: ${idPlayer} : ${amount}`);
+        let stat = card.buy(p, amount);
+        console.log(`compra concluida ${stat}`);
+    }
 }

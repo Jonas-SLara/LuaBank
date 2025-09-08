@@ -1,6 +1,5 @@
 import Card from "./Card";
 
-
 export default class House extends Card{
     constructor(id, name_, description, valueUni, 
         uniCount, dividends, region){
@@ -8,8 +7,8 @@ export default class House extends Card{
         this.valueUni = valueUni;
         this.uniCount = uniCount;
         this.player = null; //jogador dono
-        this.buyers = []; //registro de compras idPlayer + quantidade de cotas
         this.region = region;
+        this.buyers = [];
         this.dividends = dividends;
     }
 
@@ -17,20 +16,25 @@ export default class House extends Card{
     getUniCount(){ return this.uniCount; }
     getDividends(){ return this.dividends; }
 
-    //função para adicionar um comprador e tambem a quantidade de cotas 
-    addBuyer(player, amount){
+    //adiciona as cotas no registro do jogador apos conclusão da compra
+    buy(player, amount){
         if(amount > this.unicout){
             console.log("não foi possivel realizar a trasação");
             return false;
         }
-        this.buyers.push({player: player, amount: amount});
         this.uniCount = this.uniCount - amount;
-        return true;
+        const item = player.getItemsId(this.id);
+        //se não tiver um item ainda cria ele, isso evita criar ele de novo depois
+        if(item == null){
+            player.addItem({id: this.id, amount: amount });
+            return true
+        }
+        //caso já tenha apenas altere os valores
+        item.amount = item.amount + amount;
+        return player.setItem(item);
     }
 
-    getBuyers(){ return this.buyers;}
-
+   
     //calcula a quantidade de cotas que o player tem nesta casa e retorna
     
-
 }
