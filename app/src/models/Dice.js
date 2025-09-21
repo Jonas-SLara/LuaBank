@@ -10,7 +10,6 @@ export default class Dice{
     roll(){
         let x = Math.floor(Math.random() * 6 + 1);
         this.value = x;
-        console.log(this.value);
         return this.value;
     }
 }

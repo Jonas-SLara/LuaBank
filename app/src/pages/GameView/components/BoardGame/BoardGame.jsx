@@ -33,8 +33,8 @@ export default function BoardGame() {
                     })
                 )
             }
-            <Piece isNpc={true}/>
-            <Piece isNpc={false}/>
+            <Piece player={game.getPlayer()}/>
+            <Piece player={game.getNpc()}/>
         </DivMotion>
     );
 }

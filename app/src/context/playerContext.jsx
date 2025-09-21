@@ -17,7 +17,7 @@ export function PlayerProvider({children}){
     const createPlayer = (namePlayer) => {
         //iniciar o jogador com id 1
         console.log("inciando")
-        const newPlayer = new Player(namePlayer, 1);
+        const newPlayer = new Player(namePlayer, 1, false);
         setPlayer(newPlayer);
         console.log("player criado");
     }

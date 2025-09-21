@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 import data from "../../../../data/perfis.json";
 const VMotion = motion(section);
 
-//passa a url do perfil do jogador ou npc
+//o estilo pode mudar se for o turno do jogador com o active
+//o jogador que for tipo npc tem uma foto de perfil determinada
 function ViewPlayer({player, active}){
     return(
         <VMotion 
@@ -15,7 +16,11 @@ function ViewPlayer({player, active}){
         className={active ? styles.viewActive : styles.view}>
             <img
                 className={stylesG.perfil}
-                src={data.perfis[player.getIndexPerfil()]}
+                src={
+                    player.isNpc() ?
+                    "game/npc.png"
+                    : data.perfis[player.getIndexPerfil()]
+                }
                 alt={"perfil"}
             /><br/>
             <span>{player.getName()}</span><br/>

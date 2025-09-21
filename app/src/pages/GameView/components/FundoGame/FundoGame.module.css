@@ -1,0 +1,36 @@
+.main{
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(180deg, #09EFFF, #058F99);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* camada de imagem com opacidade */
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.background img{
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.1; /* controla a opacidade da imagem de fundo */
+}
+
+/* conteúdo por cima da imagem */
+.content {
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

@@ -13,7 +13,7 @@
 
 .modal{
     background: linear-gradient(#d1d0d0, #f9f9f9);
-    width: 60%;
+    width: 50%;
     min-height: 450px;
     border-radius: 8px;
     padding: 12px;
@@ -63,12 +63,13 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    align-items: start;
+    align-items: center;
+    justify-content: center;
 }
 
 .model_buyer{
+    min-width: 50%;
     display: flex;
-    flex-grow: 1;
     align-items: center;
     gap: 1rem;
 }

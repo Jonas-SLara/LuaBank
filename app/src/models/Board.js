@@ -11,7 +11,8 @@ export default class Board {
         this.cards = [];
         this.grid = null;
         this.regions = [];
-        this. size = 7
+        this.sizeX = 8;
+        this.sizeY = 6;
         //criar uma array de coordenadas de onde estao as cartas na matriz na hora de cria-la
         this.pointsCoord = []; // {row: col:}
 
@@ -20,28 +21,31 @@ export default class Board {
     getGrid(){return this.grid;}
     getPointsCoord(){return this.pointsCoord;}
 
-    /*Cria uma matriz 7x7 e preenche os cantos com casas enquanto no meio preenche com null*/
+    /*Cria uma matriz x por y e preenche os cantos com casas enquanto no meio preenche com null*/
     createBoardArray(){
 
         this.pointsCoord = [];
-        const TAM = this.size;
-        this.grid = Array.from({length: TAM}, ()=> Array(7).fill(null));
+        //cria matriz com null
+        this.grid = Array.from(
+            {length: this.sizeY},
+            ()=> Array(this.sizeX).fill(null)
+        );
 
         //PRENCHER NO SENTIDO HORÁRIO
         //os elementos de cima
-        for(let i=0; i<TAM; i++){
+        for(let i=0; i<this.sizeX; i++){
             this.pointsCoord.push({row: 0, col: i});
         }
-        //os elementos da direita, pula o topo
-        for(let j=1; j<TAM; j++){
-            this.pointsCoord.push({row: j, col: TAM-1});
+        //os elementos da direita, pula o topo da direita
+        for(let j=1; j<this.sizeY; j++){
+            this.pointsCoord.push({row: j, col: this.sizeX-1});
         }
         //os elementos de baixo, pula o ultimo da direita
-        for(let k=TAM-2; k>=0; k--){
-            this.pointsCoord.push({row: TAM-1, col: k})
+        for(let k=this.sizeX-2; k>=0; k--){
+            this.pointsCoord.push({row: this.sizeY-1, col: k})
         }
         //os elementos da esquerda, pula o ultimo de baixo e não le o topo
-        for(let l=TAM-2; l>0; l--){
+        for(let l=this.sizeY-2; l>0; l--){
             this.pointsCoord.push({row:l, col:0});
         }
     }

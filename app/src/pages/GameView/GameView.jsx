@@ -1,4 +1,4 @@
-import Fundo from "../Home/components/Fundo/Fundo";
+import FundoGame from "./components/FundoGame/FundoGame";
 import Leave from "./components/Leave/Leave";
 import EndTurn from "./components/EndTurn/EndTurn";
 import GameMain from "./components/GameMain/GameMain";
@@ -27,7 +27,6 @@ function GameView() {
         if (!game) return;
         if (startTurn) {
             //altera o estado de jogo e atualiza a position do jogador e o turno dele
-            console.log("estado de jogo alterado");
             game.handleRolldice(diceNum);
             
             //se for o turno do jogador saca a carta dele
@@ -49,9 +48,9 @@ function GameView() {
             <Leave/>
             <EndTurn/>
             <Bank/>
-            <Fundo bannerURL={banner2}>                
+            <FundoGame bannerURL={banner2}>                
                 <GameMain/>
-            </Fundo>
+            </FundoGame>
             <CardModal card={card} setCard={setCard}/>
         </>
     );

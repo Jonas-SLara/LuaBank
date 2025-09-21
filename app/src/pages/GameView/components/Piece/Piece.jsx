@@ -1,11 +1,9 @@
 import { useGame } from "../../../../context/gameContext";
 import { useState } from "react";
-import stylesG from "../../../../styles/common.module.css"
+import stylesG from "../../../../styles/common.module.css";
+import data from "../../../../data/perfis.json";
 
-import imgPlayer from "/game/iconAvatar1.png";
-import imgNpc from "/game/iconAvatar2.png";
-
-export default function Piece({isNpc}){
+export default function Piece({player}){
 
     //seta o estado de animação para o movimento da peça
     //isso pode ser usado para animar a peça quando ela se move
@@ -18,14 +16,9 @@ export default function Piece({isNpc}){
     const {game} = useGame();
     if(!game) return;
 
-    //recebera o player ou o jogador
-    const player = isNpc ? game.getNpc() : game.getPlayer();
-
-    //se não tiver o player, não renderiza nada
-    if(!player) return;
-
-    //pega as coordenadas do player
+    //array de coordenadas das cartas na matriz
     const pointsCoord = game.getBoard().getPointsCoord();
+    //pega as coordenadas do player 
     const coord = pointsCoord[player.getPosition()];
 
     //se não tiver coordenadas, não renderiza nada
@@ -33,8 +26,8 @@ export default function Piece({isNpc}){
 
     const style = {
         position: "absolute",
-        top: `calc(${coord.row} * (100% / 7))`,
-        left: `calc(${coord.col} * (100% / 7))`,
+        top: `calc(${coord.row} * (100% / 6))`,
+        left: `calc(${coord.col} * (100% / 8))`,
         width: `42px`,
         height: `42px`,
         borderRadius: `50%`,
@@ -48,7 +41,14 @@ export default function Piece({isNpc}){
         <div 
             className={`${stylesG.center}`}
             style={style}>
-            <img src={isNpc ? imgNpc : imgPlayer} width={"32px"}/>
+            <img 
+            src={
+                player.isNpc()
+                ? "/game/npc.png"
+                : data.perfis[player.getIndexPerfil()]
+            } 
+            style={{width: "42px", aspectRatio: 1, borderRadius: "50%"}}
+            />
         </div>
     );
 }

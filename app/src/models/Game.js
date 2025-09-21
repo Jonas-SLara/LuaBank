@@ -7,7 +7,7 @@ export default class Game {
     //receberá o jogador Principal como parametro para acessalo
     constructor(player) {
         //inicia um npc com id=0
-        this.npc = new Player("Big Brother", 0);
+        this.npc = new Player("Big Brother", 0, true);
         this.board = new Board();
         this.player = player;
         this.dice = new Dice();
@@ -65,15 +65,33 @@ export default class Game {
         }
         //o ojeto card que esta uma array de cards no Board, é uma instancia
         //de Evento ou House
-        console.log(card.getName()+" "+card.getId());
         return card;
+    }
+
+    getPlayerById(idPlayer){
+        const p = (idPlayer === 1)? this.player : this.npc;
+        return p;
     }
 
     //função do game que controla a sequencia de compra de cotas
     controlPlayerAction(card, idPlayer, amount){
-        const p = (idPlayer === 1)? this.player : this.npc;
         console.log(`comprando: ${idPlayer} : ${amount}`);
-        let stat = card.buy(p, amount);
+        let stat = card.buy(this.getPlayerById(idPlayer), amount);
         console.log(`compra concluida ${stat}`);
+    }
+
+    //função que retorna um objeto de cotas e o total dado
+    //um jogador e uma carta do tipo casa
+
+    getInfoPlayerHouse(house, idPlayer){
+        const p = this.getPlayerById(idPlayer);
+        const idCard = house.getId()
+
+        //item = {id, amount}
+        let item = p.getItemsId(idCard);
+        if(!item){ item = {id: idCard, amount: 0}; }
+        console.log(house);
+        console.log(item);
+        return item; 
     }
 }

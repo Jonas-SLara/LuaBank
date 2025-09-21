@@ -1,6 +1,6 @@
-import styles from './Fundo.module.css'
+import styles from './FundoGame.module.css'
 
-function Fundo({children, bannerURL}) {
+function FundoGame({children, bannerURL}) {
   const bannerOn = bannerURL !== null && bannerURL !== undefined;
 
   return(      
@@ -18,4 +18,4 @@ function Fundo({children, bannerURL}) {
     );
 }
 
-export default Fundo;
+export default FundoGame;
